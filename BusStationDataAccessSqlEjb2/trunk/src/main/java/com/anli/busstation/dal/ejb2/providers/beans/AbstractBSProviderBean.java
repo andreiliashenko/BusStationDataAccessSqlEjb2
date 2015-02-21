@@ -2,9 +2,8 @@ package com.anli.busstation.dal.ejb2.providers.beans;
 
 import com.anli.busstation.dal.exceptions.ConsistencyException;
 import com.anli.busstation.dal.interfaces.entities.BSEntity;
-import com.anli.busstation.dal.sql.configuration.EntityHandlerConfiguration;
+import com.anli.busstation.dal.sql.configuration.ConfigurationHolder;
 import com.anli.busstation.dal.sql.idgeneration.IdGenerator;
-import com.anli.busstation.dal.sql.idgeneration.StubGenerator;
 import com.anli.simpleorm.exceptions.NonExistentEntitiesException;
 import com.anli.simpleorm.handling.EntityHandler;
 import java.math.BigInteger;
@@ -17,11 +16,12 @@ public abstract class AbstractBSProviderBean<I extends BSEntity> implements Sess
     protected abstract String getEntityName();
 
     protected EntityHandler<I> getEntityHandler() {
-        return EntityHandlerConfiguration.getInstance().getHandler(getEntityName());
+        return ConfigurationHolder.getHandlerConfiguration()
+                .getHandler(getEntityName());
     }
 
     protected IdGenerator getIdGenerator() {
-        return StubGenerator.getInstance();
+        return ConfigurationHolder.getIdGenerator();
     }
 
     public I create() {
