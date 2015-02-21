@@ -26,4 +26,8 @@ public abstract class AbstractLookupFactory {
             throw new LookupError(namingException);
         }
     }
+
+    protected <T> T lookup(Class<T> clazz) {
+        return lookup(clazz.getCanonicalName(), clazz);
+    }
 }
