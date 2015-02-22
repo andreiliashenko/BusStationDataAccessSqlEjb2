@@ -8,6 +8,7 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class RoadProviderBean extends AbstractBSProviderBean<Road> {
@@ -34,14 +35,20 @@ public class RoadProviderBean extends AbstractBSProviderBean<Road> {
     }
 
     public List<Road> findByStation(Station station) {
-        BigInteger stationId = station != null ? station.getId() : null;
+        if (station == null) {
+            return getEntityHandler().selectEntitiesByNamedQuery("byNullStation", null);
+        }
+        BigInteger stationId = station.getId();
         return getEntityHandler().selectEntitiesByNamedQuery("byStation",
                 Arrays.asList(stationId, stationId));
     }
 
     public List<Road> findByAnyStation(Collection<Station> stationList) {
+        if (stationList == null || stationList.isEmpty()) {
+            return Collections.emptyList();
+        }
         Collection<BigInteger> idList = getStationIds(stationList);
-        return getEntityHandler().selectEntitiesByNamedQuery("byAnyStation", 
+        return getEntityHandler().selectEntitiesByNamedQuery("byAnyStation",
                 Arrays.asList(idList, idList));
     }
 
@@ -72,14 +79,20 @@ public class RoadProviderBean extends AbstractBSProviderBean<Road> {
     }
 
     public List<BigInteger> collectIdsByStation(Station station) {
-        BigInteger stationId = station != null ? station.getId() : null;
+        if (station == null) {
+            return getEntityHandler().collectKeysByNamedQuery("byNullStation", null);
+        }
+        BigInteger stationId = station.getId();
         return getEntityHandler().collectKeysByNamedQuery("byStation",
                 Arrays.asList(stationId, stationId));
     }
 
     public List<BigInteger> collectIdsByAnyStation(Collection<Station> stationList) {
+        if (stationList == null || stationList.isEmpty()) {
+            return Collections.emptyList();
+        }
         Collection<BigInteger> idList = getStationIds(stationList);
-        return getEntityHandler().collectKeysByNamedQuery("byAnyStation", 
+        return getEntityHandler().collectKeysByNamedQuery("byAnyStation",
                 Arrays.asList(idList, idList));
     }
 
