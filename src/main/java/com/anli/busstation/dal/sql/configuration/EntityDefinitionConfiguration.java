@@ -1,7 +1,8 @@
 package com.anli.busstation.dal.sql.configuration;
 
-import com.anli.busstation.dal.sql.configuration.definitions.EntityDefinitionBuilder;
+import com.anli.busstation.dal.sql.definitions.EntityDefinitionBuilder;
 import com.anli.simpleorm.definitions.EntityDefinition;
+import com.anli.simpleorm.queries.named.NamedQuery;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -159,7 +160,11 @@ public class EntityDefinitionConfiguration {
         return getBuilder().create("Road", "roads").addPrimaryKey("road_id")
                 .addReferenceField("aStation", "a_station", station)
                 .addReferenceField("zStation", "z_station", station)
-                .addIntegerField("length", "length").addBigDecimalField("ridePrice", "ride_price").build();
+                .addIntegerField("length", "length").addBigDecimalField("ridePrice", "ride_price")
+                .addNamedQuery("byStation", "", "where road.a_station = ? or road.z_station = ?")
+                .addNamedQuery("byAnyStation", "", "where road.a_station in (" 
+                        + NamedQuery.getListMacro() + ") or road.z_station in ("
+                        + NamedQuery.getListMacro() + ")").build();
     }
 
     protected EntityDefinition getRegionDefinition(EntityDefinition station) {
