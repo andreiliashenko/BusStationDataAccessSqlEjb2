@@ -162,9 +162,11 @@ public class EntityDefinitionConfiguration {
                 .addReferenceField("zStation", "z_station", station)
                 .addIntegerField("length", "length").addBigDecimalField("ridePrice", "ride_price")
                 .addNamedQuery("byStation", "", "where road.a_station = ? or road.z_station = ?")
-                .addNamedQuery("byAnyStation", "", "where road.a_station in (" 
+                .addNamedQuery("byAnyStation", "", "where road.a_station in ("
                         + NamedQuery.getListMacro() + ") or road.z_station in ("
-                        + NamedQuery.getListMacro() + ")").build();
+                        + NamedQuery.getListMacro() + ")")
+                .addNamedQuery("byNullStation", "", 
+                        "where road.a_station is null or road.z_station is null").build();
     }
 
     protected EntityDefinition getRegionDefinition(EntityDefinition station) {
