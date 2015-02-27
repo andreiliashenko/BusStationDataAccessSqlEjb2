@@ -125,7 +125,7 @@ public class TicketProviderBean extends AbstractBSProviderBean<Ticket> {
 
     public List<BigInteger> collectIdsByPriceRange(BigDecimal priceLeft, boolean strictLeft,
             BigDecimal priceRight, boolean strictRight) {
-        return getEntityHandler().collectKeysByRange("priceRange", priceLeft, strictLeft,
+        return getEntityHandler().collectKeysByRange("price", priceLeft, strictLeft,
                 priceRight, strictRight);
     }
 
