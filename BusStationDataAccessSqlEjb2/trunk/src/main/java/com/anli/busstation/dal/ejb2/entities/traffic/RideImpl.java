@@ -64,4 +64,10 @@ public class RideImpl extends BSEntityImpl implements Ride {
                 && nullableListDeepEquals((List) this.rideRoads, (List) rideComparee.rideRoads)
                 && nullableListDeepEquals((List) this.tickets, (List) rideComparee.tickets);
     }
+    
+    @Override
+    public String toString() {
+        return super.toString() + " bus = {" + bus + "} ridePoints = "
+                + ridePoints + " rideRoads = " + rideRoads + " tickets = " + tickets;
+    }
 }
