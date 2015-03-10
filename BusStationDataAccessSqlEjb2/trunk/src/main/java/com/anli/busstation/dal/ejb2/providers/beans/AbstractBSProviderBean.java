@@ -33,7 +33,7 @@ public abstract class AbstractBSProviderBean<I extends BSEntity> implements Sess
             getEntityHandler().updateEntity(entity);
             return entity;
         } catch (NonExistentEntitiesException neeException) {
-            throw new ConsistencyException(neeException);
+            throw new ConsistencyException(neeException.getEntities(), neeException);
         }
     }
 
@@ -41,7 +41,7 @@ public abstract class AbstractBSProviderBean<I extends BSEntity> implements Sess
         try {
             getEntityHandler().deleteEntity(entity);
         } catch (NonExistentEntitiesException neeException) {
-            throw new ConsistencyException(neeException);
+            throw new ConsistencyException(neeException.getEntities(), neeException);
         }
     }
 
