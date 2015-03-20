@@ -54,6 +54,7 @@ public class RideImpl extends BSEntityImpl implements Ride {
         this.tickets = tickets;
     }
 
+    @Override
     public boolean deepEquals(BSEntity comparee) {
         if (!this.equals(comparee)) {
             return false;
