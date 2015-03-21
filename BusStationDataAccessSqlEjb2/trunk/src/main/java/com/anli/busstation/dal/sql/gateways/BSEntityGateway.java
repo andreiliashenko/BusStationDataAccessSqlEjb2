@@ -110,7 +110,7 @@ public abstract class BSEntityGateway<Entity extends BSEntityImpl> implements En
         protected abstract Entity getNewInstance();
 
         protected abstract String getEntityName();
-        
+
         protected Entity getInstance() {
             return instance;
         }

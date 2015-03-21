@@ -10,79 +10,79 @@ import java.util.Collection;
 import java.util.List;
 
 public class RouteProviderBean extends AbstractBSProviderBean<Route> {
-    
+
     @Override
     protected String getEntityName() {
         return "Route";
     }
-    
+
     public Route pullRoutePoints(Route route) {
         getEntityHandler().pullCollection(route, "routePoints");
         return route;
     }
-    
+
     public Route pullRides(Route route) {
         getEntityHandler().pullCollection(route, "rides");
         return route;
     }
-    
+
     public List<Route> findByNumCode(String numCode) {
         return getEntityHandler().selectEntitiesByEqualsOrContains("numCode", numCode);
     }
-    
-    public List<Route> findByAnyNumCode(Collection<String> numCodeList) {
-        return getEntityHandler().selectEntitiesByAny("numCode", numCodeList);
+
+    public List<Route> findByAnyNumCode(Collection<String> numCodes) {
+        return getEntityHandler().selectEntitiesByAny("numCode", numCodes);
     }
-    
-    public List<Route> findByTicketPriceRange(BigDecimal priceLeft, boolean strictLeft,
-            BigDecimal priceRight, boolean strictRight) {
-        return getEntityHandler().selectEntitiesByRange("ticketPrice", priceLeft, strictLeft,
-                priceRight, strictRight);
+
+    public List<Route> findByTicketPriceRange(BigDecimal ticketPriceLeft, boolean strictLeft,
+            BigDecimal ticketPriceRight, boolean strictRight) {
+        return getEntityHandler().selectEntitiesByRange("ticketPrice", ticketPriceLeft, strictLeft,
+                ticketPriceRight, strictRight);
     }
-    
+
     public List<Route> findByRoutePoint(RoutePoint routePoint) {
         return getEntityHandler().selectEntitiesByEqualsOrContains("routePoints", routePoint);
     }
-    
-    public List<Route> findByAnyRoutePoint(Collection<RoutePoint> routePointList) {
-        return getEntityHandler().selectEntitiesByAny("routePoints", routePointList);
+
+    public List<Route> findByAnyRoutePoint(Collection<RoutePoint> routePoints) {
+        return getEntityHandler().selectEntitiesByAny("routePoints", routePoints);
     }
-    
+
     public List<Route> findByRide(Ride ride) {
         return getEntityHandler().selectEntitiesByEqualsOrContains("rides", ride);
     }
-    
-    public List<Route> findByAnyRide(Collection<Ride> rideList) {
-        return getEntityHandler().selectEntitiesByAny("rides", rideList);
+
+    public List<Route> findByAnyRide(Collection<Ride> rides) {
+        return getEntityHandler().selectEntitiesByAny("rides", rides);
     }
-    
+
     public List<BigInteger> collectIdsByNumCode(String numCode) {
         return getEntityHandler().collectKeysByEqualsOrContains("numCode", numCode);
     }
-    
-    public List<BigInteger> collectIdsByAnyNumCode(Collection<String> numCodeList) {
-        return getEntityHandler().collectKeysByAny("numCode", numCodeList);
+
+    public List<BigInteger> collectIdsByAnyNumCode(Collection<String> numCodes) {
+        return getEntityHandler().collectKeysByAny("numCode", numCodes);
     }
-    
-    public List<BigInteger> collectIdsByTicketPriceRange(BigDecimal priceLeft, boolean strictLeft,
-            BigDecimal priceRight, boolean strictRight) {
-        return getEntityHandler().collectKeysByRange("ticketPrice", priceLeft, strictLeft,
-                priceRight, strictRight);
+
+    public List<BigInteger> collectIdsByTicketPriceRange(BigDecimal ticketPriceLeft, boolean strictLeft,
+            BigDecimal ticketPriceRight, boolean strictRight) {
+        return getEntityHandler().collectKeysByRange("ticketPrice", ticketPriceLeft, strictLeft,
+                ticketPriceRight, strictRight);
     }
-    
+
     public List<BigInteger> collectIdsByRoutePoint(RoutePoint routePoint) {
         return getEntityHandler().collectKeysByEqualsOrContains("routePoints", routePoint);
     }
-    
-    public List<BigInteger> collectIdsByAnyRoutePoint(Collection<RoutePoint> routePointList) {
-        return getEntityHandler().collectKeysByAny("routePoints", routePointList);
+
+    public List<BigInteger> collectIdsByAnyRoutePoint(Collection<RoutePoint> routePoints) {
+        return getEntityHandler().collectKeysByAny("routePoints", routePoints);
     }
-    
+
     public List<BigInteger> collectIdsByRide(Ride ride) {
         return getEntityHandler().collectKeysByEqualsOrContains("rides", ride);
     }
-    
-    public List<BigInteger> collectIdsByAnyRide(Collection<Ride> rideList) {
-        return getEntityHandler().collectKeysByAny("rides", rideList);
+
+    public List<BigInteger> collectIdsByAnyRide(Collection<Ride> rides) {
+        return getEntityHandler().collectKeysByAny("rides", rides);
     }
 }

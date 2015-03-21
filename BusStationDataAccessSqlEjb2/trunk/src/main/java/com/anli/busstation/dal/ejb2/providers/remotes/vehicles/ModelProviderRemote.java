@@ -15,33 +15,33 @@ public interface ModelProviderRemote extends BSEntityProviderRemote<Model> {
 
     List<Model> findByNameRegexp(String nameRegexp) throws RemoteException;
 
-    List<Model> findBySeatsNumberRange(Integer seatsLeft, boolean strictLeft,
-            Integer seatsRight, boolean strictRight) throws RemoteException;
+    List<Model> findBySeatsNumberRange(Integer seatsNumberLeft, boolean strictLeft,
+            Integer seatsNumberRight, boolean strictRight) throws RemoteException;
 
-    List<Model> findByTankVolumeRange(Integer tvLeft, boolean strictLeft,
-            Integer tvRight, boolean strictRight) throws RemoteException;
+    List<Model> findByTankVolumeRange(Integer tankVolumeLeft, boolean strictLeft,
+            Integer tankVolumeRight, boolean strictRight) throws RemoteException;
 
-    List<Model> findByGasLabel(GasLabel label) throws RemoteException;
+    List<Model> findByGasLabel(GasLabel gasLabel) throws RemoteException;
 
-    List<Model> findByAnyGasLabel(Collection<GasLabel> labelList) throws RemoteException;
+    List<Model> findByAnyGasLabel(Collection<GasLabel> gasLabels) throws RemoteException;
 
-    List<Model> findByGasRateRange(BigDecimal rateLeft, boolean strictLeft,
-            BigDecimal rateRight, boolean strictRight) throws RemoteException;
+    List<Model> findByGasRateRange(BigDecimal gasRateLeft, boolean strictLeft,
+            BigDecimal gasRateRight, boolean strictRight) throws RemoteException;
 
     List<BigInteger> collectIdsByName(String name) throws RemoteException;
 
     List<BigInteger> collectIdsByNameRegexp(String nameRegexp) throws RemoteException;
 
-    List<BigInteger> collectIdsBySeatsNumberRange(Integer seatsLeft, boolean strictLeft,
-            Integer seatsRight, boolean strictRight) throws RemoteException;
+    List<BigInteger> collectIdsBySeatsNumberRange(Integer seatsNumberLeft, boolean strictLeft,
+            Integer seatsNumberRight, boolean strictRight) throws RemoteException;
 
-    List<BigInteger> collectIdsByGasLabel(GasLabel label) throws RemoteException;
+    List<BigInteger> collectIdsByGasLabel(GasLabel gasLabel) throws RemoteException;
 
-    List<BigInteger> collectIdsByAnyGasLabel(Collection<GasLabel> labelList) throws RemoteException;
+    List<BigInteger> collectIdsByAnyGasLabel(Collection<GasLabel> gasLabels) throws RemoteException;
 
-    List<BigInteger> collectIdsByGasRateRange(BigDecimal rateLeft, boolean strictLeft,
-            BigDecimal rateRight, boolean strictRight) throws RemoteException;
+    List<BigInteger> collectIdsByGasRateRange(BigDecimal gasRateLeft, boolean strictLeft,
+            BigDecimal gasRateRight, boolean strictRight) throws RemoteException;
 
-    List<BigInteger> collectIdsByTankVolumeRange(Integer tvLeft, boolean strictLeft,
-            Integer tvRight, boolean strictRight) throws RemoteException;
+    List<BigInteger> collectIdsByTankVolumeRange(Integer tankVolumeLeft, boolean strictLeft,
+            Integer tankVolumeRight, boolean strictRight) throws RemoteException;
 }

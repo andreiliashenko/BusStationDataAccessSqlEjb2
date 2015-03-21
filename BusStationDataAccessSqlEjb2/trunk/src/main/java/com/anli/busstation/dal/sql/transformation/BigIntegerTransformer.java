@@ -25,5 +25,4 @@ public class BigIntegerTransformer implements SqlTransformer<BigInteger, BigDeci
     public Class<? extends BigDecimal> getSqlClass() {
         return BigDecimal.class;
     }
-
 }

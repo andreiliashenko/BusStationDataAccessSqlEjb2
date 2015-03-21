@@ -8,17 +8,17 @@ import java.util.List;
 
 public interface TechnicalStateProviderRemote extends BSEntityProviderRemote<TechnicalState> {
 
-    List<TechnicalState> findByDescriptionRegexp(String descrRegexp) throws RemoteException;
+    List<TechnicalState> findByDescriptionRegexp(String descriptionRegexp) throws RemoteException;
 
-    List<TechnicalState> findByDifficultyLevel(Integer diffLevel) throws RemoteException;
+    List<TechnicalState> findByDifficultyLevel(Integer difficultyLevel) throws RemoteException;
 
-    List<TechnicalState> findByDifficultyLevelRange(Integer dLLeft, boolean strictLeft,
-            Integer dLRight, boolean strictRight) throws RemoteException;
+    List<TechnicalState> findByDifficultyLevelRange(Integer difficultyLevelLeft, boolean strictLeft,
+            Integer diffictultyLevelRight, boolean strictRight) throws RemoteException;
 
-    List<BigInteger> collectIdsByDescriptionRegexp(String descrRegexp) throws RemoteException;
+    List<BigInteger> collectIdsByDescriptionRegexp(String descriptionRegexp) throws RemoteException;
 
-    List<BigInteger> collectIdsByDifficultyLevel(Integer diffLevel) throws RemoteException;
+    List<BigInteger> collectIdsByDifficultyLevel(Integer difficultyLevel) throws RemoteException;
 
-    List<BigInteger> collectIdsByDifficultyLevelRange(Integer dLLeft, boolean strictLeft,
-            Integer dLRight, boolean strictRight) throws RemoteException;
+    List<BigInteger> collectIdsByDifficultyLevelRange(Integer difficultyLevelLeft, boolean strictLeft,
+            Integer difficultyLevelRight, boolean strictRight) throws RemoteException;
 }

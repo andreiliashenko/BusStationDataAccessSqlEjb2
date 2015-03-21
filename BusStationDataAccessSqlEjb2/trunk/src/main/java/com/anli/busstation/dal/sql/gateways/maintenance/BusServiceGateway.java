@@ -7,7 +7,7 @@ import com.anli.simpleorm.handling.EntityGateway;
 import com.anli.simpleorm.handling.SuperEntityGateway;
 import java.util.HashMap;
 
-public class BusServiceGateway extends SuperEntityGateway<BusServiceImpl>{
+public class BusServiceGateway extends SuperEntityGateway<BusServiceImpl> {
 
     public BusServiceGateway(BusRefuellingGateway busRefuelling, BusRepairmentGateway busRepairment) {
         super(new HashMap<Class<? extends BusServiceImpl>, EntityGateway<? extends BusServiceImpl>>());

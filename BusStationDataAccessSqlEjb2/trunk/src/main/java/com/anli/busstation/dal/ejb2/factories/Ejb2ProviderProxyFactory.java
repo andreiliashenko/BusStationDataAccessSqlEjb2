@@ -9,16 +9,17 @@ import java.lang.reflect.Proxy;
 public class Ejb2ProviderProxyFactory implements ProviderFactory {
 
     protected final Ejb2ProviderFactory remoteFactory;
-    
+
     public Ejb2ProviderProxyFactory() {
         this.remoteFactory = new Ejb2ProviderFactory();
     }
+
     @Override
     public <I extends BSEntityProvider> I getProvider(Class<I> abstraction) {
         return getProxy(abstraction, getRemote(abstraction));
     }
 
-    protected <I> BSEntityProviderRemote getRemote(Class<I> abstraction) {
+    protected <I extends BSEntityProvider> BSEntityProviderRemote getRemote(Class<I> abstraction) {
         return remoteFactory.getProvider(abstraction);
     }
 

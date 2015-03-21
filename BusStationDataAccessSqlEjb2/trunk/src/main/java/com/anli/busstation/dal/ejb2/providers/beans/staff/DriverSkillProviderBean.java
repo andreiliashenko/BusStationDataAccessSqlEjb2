@@ -16,39 +16,39 @@ public class DriverSkillProviderBean extends AbstractBSProviderBean<DriverSkill>
         return getEntityHandler().selectEntitiesByEqualsOrContains("name", name);
     }
 
-    public List<DriverSkill> findByNameRegexp(String regexpName) {
-        return getEntityHandler().selectEntitiesByRegexp("name", regexpName);
+    public List<DriverSkill> findByNameRegexp(String nameRegexp) {
+        return getEntityHandler().selectEntitiesByRegexp("name", nameRegexp);
     }
 
-    public List<DriverSkill> findByMaxRideLengthRange(Integer mrlLeft, boolean strictLeft,
-            Integer mrlRight, boolean strictRight) {
-        return getEntityHandler().selectEntitiesByRange("maxRideLength", mrlLeft, strictLeft,
-                mrlRight, strictRight);
+    public List<DriverSkill> findByMaxRideLengthRange(Integer maxRideLengthLeft, boolean strictLeft,
+            Integer maxRideLengthRight, boolean strictRight) {
+        return getEntityHandler().selectEntitiesByRange("maxRideLength", maxRideLengthLeft, strictLeft,
+                maxRideLengthRight, strictRight);
     }
 
-    public List<DriverSkill> findByMaxPassengersRange(Integer mpLeft, boolean strictLeft,
-            Integer mpRight, boolean strictRight) {
-        return getEntityHandler().selectEntitiesByRange("maxPassengers", mpLeft, strictLeft,
-                mpRight, strictRight);
+    public List<DriverSkill> findByMaxPassengersRange(Integer maxPassengersLeft, boolean strictLeft,
+            Integer maxPassengersRight, boolean strictRight) {
+        return getEntityHandler().selectEntitiesByRange("maxPassengers", maxPassengersLeft, strictLeft,
+                maxPassengersRight, strictRight);
     }
 
     public List<BigInteger> collectIdsByName(String name) {
         return getEntityHandler().collectKeysByEqualsOrContains("name", name);
     }
 
-    public List<BigInteger> collectIdsByNameRegexp(String regexpName) {
-        return getEntityHandler().collectKeysByRegexp("name", regexpName);
+    public List<BigInteger> collectIdsByNameRegexp(String nameRegexp) {
+        return getEntityHandler().collectKeysByRegexp("name", nameRegexp);
     }
 
-    public List<BigInteger> collectIdsByMaxRideLengthRange(Integer mrlLeft, boolean strictLeft,
-            Integer mrlRight, boolean strictRight) {
-        return getEntityHandler().collectKeysByRange("maxRideLength", mrlLeft, strictLeft,
-                mrlRight, strictRight);
+    public List<BigInteger> collectIdsByMaxRideLengthRange(Integer maxRideLengthLeft, boolean strictLeft,
+            Integer maxRideLengthRight, boolean strictRight) {
+        return getEntityHandler().collectKeysByRange("maxRideLength", maxRideLengthLeft, strictLeft,
+                maxRideLengthRight, strictRight);
     }
 
-    public List<BigInteger> collectIdsByMaxPassengersRange(Integer mpLeft, boolean strictLeft,
-            Integer mpRight, boolean strictRight) {
-        return getEntityHandler().collectKeysByRange("maxPassengers", mpLeft, strictLeft,
-                mpRight, strictRight);
+    public List<BigInteger> collectIdsByMaxPassengersRange(Integer maxPassengersLeft, boolean strictLeft,
+            Integer maxPassengersRight, boolean strictRight) {
+        return getEntityHandler().collectKeysByRange("maxPassengers", maxPassengersLeft, strictLeft,
+                maxPassengersRight, strictRight);
     }
 }

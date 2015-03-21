@@ -18,11 +18,11 @@ public interface RegionProviderRemote extends BSEntityProviderRemote<Region> {
 
     List<Region> findByCode(Integer code) throws RemoteException;
 
-    List<Region> findByAnyCode(Collection<Integer> codeList) throws RemoteException;
+    List<Region> findByAnyCode(Collection<Integer> codes) throws RemoteException;
 
     List<Region> findByStation(Station station) throws RemoteException;
 
-    List<Region> findByAnyStation(Collection<Station> stationList) throws RemoteException;
+    List<Region> findByAnyStation(Collection<Station> stations) throws RemoteException;
 
     List<BigInteger> collectIdsByName(String name) throws RemoteException;
 
@@ -30,9 +30,9 @@ public interface RegionProviderRemote extends BSEntityProviderRemote<Region> {
 
     List<BigInteger> collectIdsByCode(Integer code) throws RemoteException;
 
-    List<BigInteger> collectIdsByAnyCode(Collection<Integer> codeList) throws RemoteException;
+    List<BigInteger> collectIdsByAnyCode(Collection<Integer> codes) throws RemoteException;
 
     List<BigInteger> collectIdsByStation(Station station) throws RemoteException;
 
-    List<BigInteger> collectIdsByAnyStation(Collection<Station> stationList) throws RemoteException;
+    List<BigInteger> collectIdsByAnyStation(Collection<Station> stations) throws RemoteException;
 }

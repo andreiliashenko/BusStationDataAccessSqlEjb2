@@ -12,9 +12,9 @@ public interface RoutePointProviderRemote extends BSEntityProviderRemote<RoutePo
 
     List<RoutePoint> findByStation(Station station) throws RemoteException;
 
-    List<RoutePoint> findByAnyStation(Collection<Station> stationList) throws RemoteException;
+    List<RoutePoint> findByAnyStation(Collection<Station> stations) throws RemoteException;
 
     List<BigInteger> collectIdsByStation(Station station) throws RemoteException;
 
-    List<BigInteger> collectIdsByAnyStation(Collection<Station> stationList) throws RemoteException;
+    List<BigInteger> collectIdsByAnyStation(Collection<Station> stations) throws RemoteException;
 }

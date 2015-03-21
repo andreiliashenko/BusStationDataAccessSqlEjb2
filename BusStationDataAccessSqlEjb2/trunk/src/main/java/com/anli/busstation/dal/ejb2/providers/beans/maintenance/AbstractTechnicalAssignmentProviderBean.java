@@ -17,48 +17,51 @@ public abstract class AbstractTechnicalAssignmentProviderBean<I extends Technica
         return getEntityHandler().selectEntitiesByEqualsOrContains("mechanic", mechanic);
     }
 
-    public List<I> findByAnyMechanic(Collection<Mechanic> mechanicList) {
-        return getEntityHandler().selectEntitiesByAny("mechanic", mechanicList);
+    public List<I> findByAnyMechanic(Collection<Mechanic> mechanics) {
+        return getEntityHandler().selectEntitiesByAny("mechanic", mechanics);
     }
 
-    public List<I> findByBeginTimeRange(DateTime leftBT, boolean strictLeft,
-            DateTime rightBT, boolean strictRight) {
-        return getEntityHandler().selectEntitiesByRange("beginTime", leftBT, strictLeft,
-                rightBT, strictRight);
+    public List<I> findByBeginTimeRange(DateTime beginTimeLeft, boolean strictLeft,
+            DateTime beginTimeRight, boolean strictRight) {
+        return getEntityHandler().selectEntitiesByRange("beginTime", beginTimeLeft, strictLeft,
+                beginTimeRight, strictRight);
     }
 
-    public List<I> findByEndTimeRange(DateTime leftET, boolean strictLeft,
-            DateTime rightET, boolean strictRight) {
-        return getEntityHandler().selectEntitiesByRange("endTime", leftET, strictLeft, rightET, strictRight);
+    public List<I> findByEndTimeRange(DateTime endTimeLeft, boolean strictLeft,
+            DateTime endTimeRight, boolean strictRight) {
+        return getEntityHandler().selectEntitiesByRange("endTime", endTimeLeft, strictLeft,
+                endTimeRight, strictRight);
     }
 
-    public List<I> findByServiceCostRange(BigDecimal leftCost, boolean strictLeft,
-            BigDecimal rightCost, boolean strictRight) {
-        return getEntityHandler().selectEntitiesByRange("serviceCost", leftCost, strictLeft,
-                rightCost, strictRight);
+    public List<I> findByServiceCostRange(BigDecimal serviceCostLeft, boolean strictLeft,
+            BigDecimal serviceCostRight, boolean strictRight) {
+        return getEntityHandler().selectEntitiesByRange("serviceCost", serviceCostLeft, strictLeft,
+                serviceCostRight, strictRight);
     }
 
     public List<BigInteger> collectIdsByMechanic(Mechanic mechanic) {
         return getEntityHandler().collectKeysByEqualsOrContains("mechanic", mechanic);
     }
 
-    public List<BigInteger> collectIdsByAnyMechanic(Collection<Mechanic> mechanicList) {
-        return getEntityHandler().collectKeysByAny("mechanic", mechanicList);
+    public List<BigInteger> collectIdsByAnyMechanic(Collection<Mechanic> mechanics) {
+        return getEntityHandler().collectKeysByAny("mechanic", mechanics);
     }
 
-    public List<BigInteger> collectIdsByBeginTimeRange(DateTime leftBT, boolean strictLeft,
-            DateTime rightBT, boolean strictRight) {
-        return getEntityHandler().collectKeysByRange("beginTime", leftBT, strictLeft, rightBT, strictRight);
+    public List<BigInteger> collectIdsByBeginTimeRange(DateTime beginTimeLeft, boolean strictLeft,
+            DateTime beginTimeRight, boolean strictRight) {
+        return getEntityHandler().collectKeysByRange("beginTime", beginTimeLeft, strictLeft,
+                beginTimeRight, strictRight);
     }
 
-    public List<BigInteger> collectIdsByEndTimeRange(DateTime leftET, boolean strictLeft,
-            DateTime rightET, boolean strictRight) {
-        return getEntityHandler().collectKeysByRange("endTime", leftET, strictLeft, rightET, strictRight);
+    public List<BigInteger> collectIdsByEndTimeRange(DateTime endTimeLeft, boolean strictLeft,
+            DateTime endTimeRight, boolean strictRight) {
+        return getEntityHandler().collectKeysByRange("endTime", endTimeLeft, strictLeft,
+                endTimeRight, strictRight);
     }
 
-    public List<BigInteger> collectIdsByServiceCostRange(BigDecimal leftCost, boolean strictLeft,
-            BigDecimal rightCost, boolean strictRight) throws RemoteException {
-        return getEntityHandler().collectKeysByRange("serviceCost", leftCost, strictLeft,
-                rightCost, strictRight);
+    public List<BigInteger> collectIdsByServiceCostRange(BigDecimal serviceCostLeft, boolean strictLeft,
+            BigDecimal serviceCostRight, boolean strictRight) throws RemoteException {
+        return getEntityHandler().collectKeysByRange("serviceCost", serviceCostLeft, strictLeft,
+                serviceCostRight, strictRight);
     }
 }

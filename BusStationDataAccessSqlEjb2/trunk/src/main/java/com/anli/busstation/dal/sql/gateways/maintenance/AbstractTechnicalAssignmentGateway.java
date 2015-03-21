@@ -9,13 +9,13 @@ import org.joda.time.DateTime;
 
 public abstract class AbstractTechnicalAssignmentGateway<Entity extends TechnicalAssignmentImpl>
         extends BSEntityGateway<Entity> {
-    
+
     protected static final String TECHNICAL_ASSIGNMENT = "TechnicalAssignment";
     protected static final String BEGIN_TIME = "beginTime";
     protected static final String END_TIME = "endTime";
     protected static final String MECHANIC = "mechanic";
     protected static final String SERVICE_COST = "serviceCost";
-    
+
     @Override
     public Object extractSingle(Entity entity, String entityName, String fieldName) {
         if (TECHNICAL_ASSIGNMENT.equals(entityName)) {
@@ -34,7 +34,7 @@ public abstract class AbstractTechnicalAssignmentGateway<Entity extends Technica
         }
         return super.extractSingle(entity, entityName, fieldName);
     }
-    
+
     @Override
     public Object extractFullReference(Entity entity, String entityName, String fieldName) {
         if (TECHNICAL_ASSIGNMENT.equals(entityName)) {
@@ -44,9 +44,9 @@ public abstract class AbstractTechnicalAssignmentGateway<Entity extends Technica
         }
         return super.extractFullReference(entity, entityName, fieldName);
     }
-    
+
     protected abstract class TechnicalAssignmentBuilder extends BSEntityBuilder {
-        
+
         @Override
         public EntityBuilder setSingle(String entityName, String fieldName, Object fieldValue) {
             if (TECHNICAL_ASSIGNMENT.equals(entityName)) {

@@ -1,6 +1,5 @@
 package com.anli.busstation.dal.ejb2.factories;
 
-import com.anli.busstation.dal.ejb2.exceptions.LookupError;
 import com.anli.busstation.dal.ejb2.providers.homes.BSEntityProviderHome;
 import com.anli.busstation.dal.ejb2.providers.homes.vehicles.BusProviderHome;
 import com.anli.busstation.dal.ejb2.providers.homes.maintenance.BusRefuellingProviderHome;
@@ -55,11 +54,15 @@ import com.anli.busstation.dal.interfaces.providers.traffic.TicketProvider;
 import java.rmi.RemoteException;
 import java.util.HashMap;
 import java.util.Map;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Ejb2ProviderFactory extends AbstractLookupFactory {
-
+    
+    private static final Logger LOG = LoggerFactory.getLogger(Ejb2ProviderFactory.class);
+    
     protected final static Map<Class<? extends BSEntityProvider>, Class<? extends BSEntityProviderHome>> implementations = new HashMap<>();
-
+    
     {
         implementations.put(BusProvider.class, BusProviderHome.class);
         implementations.put(BusRefuellingProvider.class, BusRefuellingProviderHome.class);
@@ -86,8 +89,8 @@ public class Ejb2ProviderFactory extends AbstractLookupFactory {
         implementations.put(TechnicalStateProvider.class, TechnicalStateProviderHome.class);
         implementations.put(TicketProvider.class, TicketProviderHome.class);
     }
-
-    public <I> BSEntityProviderRemote<?> getProvider(Class<I> type) {
+    
+    public <I> BSEntityProviderRemote<?> getProvider(Class<? extends BSEntityProvider> type) {
         try {
             Class<? extends BSEntityProviderHome> implementation = implementations.get(type);
             if (implementation == null) {
@@ -95,7 +98,8 @@ public class Ejb2ProviderFactory extends AbstractLookupFactory {
             }
             return (BSEntityProviderRemote) lookupRemote(implementation).create();
         } catch (RemoteException remoteException) {
-            throw new LookupError(remoteException);
+            LOG.error("Could not create provider by home interface", remoteException);
+            return null;
         }
     }
 }

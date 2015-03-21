@@ -7,9 +7,9 @@ import java.util.List;
 
 public interface SalesmanProviderRemote extends GenericEmployeeProviderRemote<Salesman> {
 
-    List<Salesman> findByTotalSalesRange(Integer leftSales, boolean strictLeft,
-            Integer rightSales, boolean strictRight) throws RemoteException;
+    List<Salesman> findByTotalSalesRange(Integer totalSalesLeft, boolean strictLeft,
+            Integer totalSalesRight, boolean strictRight) throws RemoteException;
 
-    List<BigInteger> collectIdsByTotalSalesRange(Integer leftSales, boolean strictLeft,
-            Integer rightSales, boolean strictRight) throws RemoteException;
+    List<BigInteger> collectIdsByTotalSalesRange(Integer totalSalesLeft, boolean strictLeft,
+            Integer totalSalesRight, boolean strictRight) throws RemoteException;
 }

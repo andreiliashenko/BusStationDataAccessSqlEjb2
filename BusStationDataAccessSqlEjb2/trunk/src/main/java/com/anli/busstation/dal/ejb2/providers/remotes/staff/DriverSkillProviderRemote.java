@@ -10,21 +10,21 @@ public interface DriverSkillProviderRemote extends BSEntityProviderRemote<Driver
 
     List<DriverSkill> findByName(String name) throws RemoteException;
 
-    List<DriverSkill> findByNameRegexp(String regexpName) throws RemoteException;
+    List<DriverSkill> findByNameRegexp(String nameRegexp) throws RemoteException;
 
-    List<DriverSkill> findByMaxRideLengthRange(Integer mRLLeft, boolean strictLeft,
-            Integer mRLRight, boolean strictRight) throws RemoteException;
+    List<DriverSkill> findByMaxRideLengthRange(Integer maxRideLengthLeft, boolean strictLeft,
+            Integer maxRideLengthRight, boolean strictRight) throws RemoteException;
 
-    List<DriverSkill> findByMaxPassengersRange(Integer maxPLeft, boolean strictLeft,
-            Integer maxPRight, boolean strictRight) throws RemoteException;
+    List<DriverSkill> findByMaxPassengersRange(Integer maxPassengersLeft, boolean strictLeft,
+            Integer maxPassengersRight, boolean strictRight) throws RemoteException;
 
     List<BigInteger> collectIdsByName(String name) throws RemoteException;
 
-    List<BigInteger> collectIdsByNameRegexp(String regexpName) throws RemoteException;
+    List<BigInteger> collectIdsByNameRegexp(String nameRegexp) throws RemoteException;
 
-    List<BigInteger> collectIdsByMaxRideLengthRange(Integer mRLLeft, boolean strictLeft,
-            Integer mRLRight, boolean strictRight) throws RemoteException;
+    List<BigInteger> collectIdsByMaxRideLengthRange(Integer maxRideLengthLeft, boolean strictLeft,
+            Integer maxRideLengthRight, boolean strictRight) throws RemoteException;
 
-    List<BigInteger> collectIdsByMaxPassengersRange(Integer maxPLeft, boolean strictLeft,
-            Integer maxPRight, boolean strictRight) throws RemoteException;
+    List<BigInteger> collectIdsByMaxPassengersRange(Integer maxPassengersLeft, boolean strictLeft,
+            Integer maxPassengersRight, boolean strictRight) throws RemoteException;
 }

@@ -4,7 +4,7 @@ import com.anli.sqlexecution.transformation.SqlTransformer;
 import java.sql.Timestamp;
 import org.joda.time.DateTime;
 
-public class DateTimeTransformer implements SqlTransformer<DateTime, Timestamp>{
+public class DateTimeTransformer implements SqlTransformer<DateTime, Timestamp> {
 
     @Override
     public Timestamp toSql(DateTime source) {

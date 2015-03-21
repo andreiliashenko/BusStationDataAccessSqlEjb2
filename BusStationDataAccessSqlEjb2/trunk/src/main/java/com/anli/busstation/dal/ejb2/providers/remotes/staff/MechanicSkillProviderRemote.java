@@ -12,13 +12,13 @@ public interface MechanicSkillProviderRemote extends BSEntityProviderRemote<Mech
 
     List<MechanicSkill> findByNameRegexp(String nameRegexp) throws RemoteException;
 
-    List<MechanicSkill> findByMaxDiffLevelRange(Integer mDLevelLeft, boolean leftStrict,
-            Integer mDLevelRight, boolean rightStrict) throws RemoteException;
+    List<MechanicSkill> findByMaxDiffLevelRange(Integer maxDiffLevelLeft, boolean leftStrict,
+            Integer maxDoffLevelRight, boolean rightStrict) throws RemoteException;
 
     List<BigInteger> collectIdsByName(String name) throws RemoteException;
 
     List<BigInteger> collectIdsByNameRegexp(String nameRegexp) throws RemoteException;
 
-    List<BigInteger> collectIdsByMaxDiffLevelRange(Integer mDLevelLeft, boolean leftStrict,
-            Integer mDLevelRight, boolean rightStrict) throws RemoteException;
+    List<BigInteger> collectIdsByMaxDiffLevelRange(Integer maxDiffLevelLeft, boolean leftStrict,
+            Integer maxDiffLevelRight, boolean rightStrict) throws RemoteException;
 }
