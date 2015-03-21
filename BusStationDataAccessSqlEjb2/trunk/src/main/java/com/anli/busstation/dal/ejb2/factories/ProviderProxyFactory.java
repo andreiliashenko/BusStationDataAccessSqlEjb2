@@ -6,12 +6,12 @@ import com.anli.busstation.dal.interfaces.factories.ProviderFactory;
 import com.anli.busstation.dal.interfaces.providers.BSEntityProvider;
 import java.lang.reflect.Proxy;
 
-public class Ejb2ProviderProxyFactory implements ProviderFactory {
+public class ProviderProxyFactory implements ProviderFactory {
 
-    protected final Ejb2ProviderFactory remoteFactory;
+    protected final ProviderRemoteFactory remoteFactory;
 
-    public Ejb2ProviderProxyFactory() {
-        this.remoteFactory = new Ejb2ProviderFactory();
+    public ProviderProxyFactory() {
+        this.remoteFactory = new ProviderRemoteFactory();
     }
 
     @Override

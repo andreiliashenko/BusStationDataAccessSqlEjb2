@@ -57,9 +57,9 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class Ejb2ProviderFactory extends AbstractLookupFactory {
+public class ProviderRemoteFactory extends AbstractLookupFactory {
     
-    private static final Logger LOG = LoggerFactory.getLogger(Ejb2ProviderFactory.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ProviderRemoteFactory.class);
     
     protected final static Map<Class<? extends BSEntityProvider>, Class<? extends BSEntityProviderHome>> implementations = new HashMap<>();
     
