@@ -12,15 +12,15 @@ public class BusRepairmentProviderBean extends AbstractBusServiceProviderBean<Bu
         return "BusRepairment";
     }
 
-    public List<BusRepairment> findByExpendablesPriceRange(BigDecimal exPriceLeft, boolean leftStrict,
-            BigDecimal exPriceRight, boolean rightStrict) {
-        return getEntityHandler().selectEntitiesByRange("expendablesPrice", exPriceLeft, leftStrict,
-                exPriceRight, rightStrict);
+    public List<BusRepairment> findByExpendablesPriceRange(BigDecimal expendablesPriceLeft, boolean leftStrict,
+            BigDecimal expendablesPriceRight, boolean rightStrict) {
+        return getEntityHandler().selectEntitiesByRange("expendablesPrice", expendablesPriceLeft, leftStrict,
+                expendablesPriceRight, rightStrict);
     }
 
-    public List<BigInteger> collectIdsByExpendablesPriceRange(BigDecimal exPriceLeft, boolean leftStrict,
-            BigDecimal exPriceRight, boolean rightStrict) {
-        return getEntityHandler().collectKeysByRange("expendablesPrice", exPriceLeft, leftStrict,
-                exPriceRight, rightStrict);
+    public List<BigInteger> collectIdsByExpendablesPriceRange(BigDecimal expendablesPriceLeft, boolean leftStrict,
+            BigDecimal expendablesPriceRight, boolean rightStrict) {
+        return getEntityHandler().collectKeysByRange("expendablesPrice", expendablesPriceLeft, leftStrict,
+                expendablesPriceRight, rightStrict);
     }
 }

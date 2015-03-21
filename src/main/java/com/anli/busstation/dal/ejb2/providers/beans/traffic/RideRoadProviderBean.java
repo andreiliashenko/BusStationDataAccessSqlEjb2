@@ -19,31 +19,31 @@ public class RideRoadProviderBean extends AbstractBSProviderBean<RideRoad> {
         return getEntityHandler().selectEntitiesByEqualsOrContains("road", road);
     }
 
-    public List<RideRoad> findByAnyRoad(Collection<Road> roadList) {
-        return getEntityHandler().selectEntitiesByAny("road", roadList);
+    public List<RideRoad> findByAnyRoad(Collection<Road> roads) {
+        return getEntityHandler().selectEntitiesByAny("road", roads);
     }
 
     public List<RideRoad> findByDriver(Driver driver) {
         return getEntityHandler().selectEntitiesByEqualsOrContains("driver", driver);
     }
 
-    public List<RideRoad> findByAnyDriver(Collection<Driver> driverList) {
-        return getEntityHandler().selectEntitiesByAny("driver", driverList);
+    public List<RideRoad> findByAnyDriver(Collection<Driver> drivers) {
+        return getEntityHandler().selectEntitiesByAny("driver", drivers);
     }
 
     public List<BigInteger> collectIdsByRoad(Road road) {
         return getEntityHandler().collectKeysByEqualsOrContains("road", road);
     }
 
-    public List<BigInteger> collectIdsByAnyRoad(Collection<Road> roadList) {
-        return getEntityHandler().collectKeysByAny("road", roadList);
+    public List<BigInteger> collectIdsByAnyRoad(Collection<Road> roads) {
+        return getEntityHandler().collectKeysByAny("road", roads);
     }
 
     public List<BigInteger> collectIdsByDriver(Driver driver) {
         return getEntityHandler().collectKeysByEqualsOrContains("driver", driver);
     }
 
-    public List<BigInteger> collectIdsByAnyDriver(Collection<Driver> driverList) {
-        return getEntityHandler().collectKeysByAny("driver", driverList);
+    public List<BigInteger> collectIdsByAnyDriver(Collection<Driver> drivers) {
+        return getEntityHandler().collectKeysByAny("driver", drivers);
     }
 }

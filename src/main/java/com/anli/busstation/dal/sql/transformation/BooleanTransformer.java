@@ -23,5 +23,4 @@ public class BooleanTransformer implements SqlTransformer<Boolean, Integer> {
     public Class<? extends Integer> getSqlClass() {
         return Integer.class;
     }
-
 }

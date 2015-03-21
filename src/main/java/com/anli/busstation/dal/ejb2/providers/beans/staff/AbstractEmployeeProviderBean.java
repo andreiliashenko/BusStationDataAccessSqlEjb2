@@ -7,7 +7,8 @@ import java.math.BigInteger;
 import java.util.List;
 import org.joda.time.DateTime;
 
-public abstract class AbstractEmployeeProviderBean<I extends Employee> extends AbstractBSProviderBean<I> {
+public abstract class AbstractEmployeeProviderBean<I extends Employee>
+        extends AbstractBSProviderBean<I> {
 
     public List<I> findByName(String name) {
         return getEntityHandler().selectEntitiesByEqualsOrContains("name", name);
@@ -23,10 +24,10 @@ public abstract class AbstractEmployeeProviderBean<I extends Employee> extends A
                 salaryRight, rightStrict);
     }
 
-    public List<I> findByHiringDateRange(DateTime hdLeft, boolean leftStrict,
-            DateTime hdRight, boolean rightStrict) {
-        return getEntityHandler().selectEntitiesByRange("hiringDate", hdLeft, leftStrict,
-                hdRight, rightStrict);
+    public List<I> findByHiringDateRange(DateTime hiringDateLeft, boolean leftStrict,
+            DateTime hiringDateRight, boolean rightStrict) {
+        return getEntityHandler().selectEntitiesByRange("hiringDate", hiringDateLeft, leftStrict,
+                hiringDateRight, rightStrict);
     }
 
     public List<BigInteger> collectIdsByName(String name) {
@@ -43,9 +44,9 @@ public abstract class AbstractEmployeeProviderBean<I extends Employee> extends A
                 salaryRight, rightStrict);
     }
 
-    public List<BigInteger> collectIdsByHiringDateRange(DateTime hdLeft, boolean leftStrict,
-            DateTime hdRight, boolean rightStrict) {
-        return getEntityHandler().collectKeysByRange("hiringDate", hdLeft, leftStrict,
-                hdRight, rightStrict);
+    public List<BigInteger> collectIdsByHiringDateRange(DateTime hiringDateLeft, boolean leftStrict,
+            DateTime hiringDateRight, boolean rightStrict) {
+        return getEntityHandler().collectKeysByRange("hiringDate", hiringDateLeft, leftStrict,
+                hiringDateRight, rightStrict);
     }
 }

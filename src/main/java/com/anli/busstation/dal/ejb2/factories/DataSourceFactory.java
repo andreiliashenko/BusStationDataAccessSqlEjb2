@@ -1,8 +1,6 @@
 package com.anli.busstation.dal.ejb2.factories;
 
 import com.anli.configuration.Configurator;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 public class DataSourceFactory extends AbstractLookupFactory {

@@ -14,7 +14,7 @@ public class RegionProviderBean extends AbstractBSProviderBean<Region> {
     protected String getEntityName() {
         return "Region";
     }
- 
+
     public Region pullStations(Region region) throws RemoteException {
         getEntityHandler().pullCollection(region, "stations");
         return region;
@@ -32,16 +32,16 @@ public class RegionProviderBean extends AbstractBSProviderBean<Region> {
         return getEntityHandler().selectEntitiesByEqualsOrContains("code", code);
     }
 
-    public List<Region> findByAnyCode(Collection<Integer> codeList) {
-        return getEntityHandler().selectEntitiesByAny("code", codeList);
+    public List<Region> findByAnyCode(Collection<Integer> codes) {
+        return getEntityHandler().selectEntitiesByAny("code", codes);
     }
 
     public List<Region> findByStation(Station station) {
         return getEntityHandler().selectEntitiesByEqualsOrContains("stations", station);
     }
 
-    public List<Region> findByAnyStation(Collection<Station> stationList) {
-        return getEntityHandler().selectEntitiesByAny("stations", stationList);
+    public List<Region> findByAnyStation(Collection<Station> stations) {
+        return getEntityHandler().selectEntitiesByAny("stations", stations);
     }
 
     public List<BigInteger> collectIdsByName(String name) {
@@ -56,15 +56,15 @@ public class RegionProviderBean extends AbstractBSProviderBean<Region> {
         return getEntityHandler().collectKeysByEqualsOrContains("code", code);
     }
 
-    public List<BigInteger> collectIdsByAnyCode(Collection<Integer> codeList) {
-        return getEntityHandler().collectKeysByAny("code", codeList);
+    public List<BigInteger> collectIdsByAnyCode(Collection<Integer> codes) {
+        return getEntityHandler().collectKeysByAny("code", codes);
     }
 
     public List<BigInteger> collectIdsByStation(Station station) {
         return getEntityHandler().collectKeysByEqualsOrContains("stations", station);
     }
 
-    public List<BigInteger> collectIdsByAnyStation(Collection<Station> stationList) {
-        return getEntityHandler().collectKeysByAny("stations", stationList);
+    public List<BigInteger> collectIdsByAnyStation(Collection<Station> stations) {
+        return getEntityHandler().collectKeysByAny("stations", stations);
     }
 }

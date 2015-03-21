@@ -165,7 +165,7 @@ public class EntityDefinitionConfiguration {
                 .addNamedQuery("byAnyStation", "", "where road.a_station in ("
                         + NamedQuery.getListMacro() + ") or road.z_station in ("
                         + NamedQuery.getListMacro() + ")")
-                .addNamedQuery("byNullStation", "", 
+                .addNamedQuery("byNullStation", "",
                         "where road.a_station is null or road.z_station is null").build();
     }
 

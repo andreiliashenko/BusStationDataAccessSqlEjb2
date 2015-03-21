@@ -11,15 +11,15 @@ public class SalesmanProviderBean extends AbstractEmployeeProviderBean<Salesman>
         return "Salesman";
     }
 
-    public List<Salesman> findByTotalSalesRange(Integer leftSales, boolean strictLeft,
-            Integer rightSales, boolean strictRight) {
-        return getEntityHandler().selectEntitiesByRange("totalSales", leftSales, strictLeft,
-                rightSales, strictRight);
+    public List<Salesman> findByTotalSalesRange(Integer totalSalesLeft, boolean strictLeft,
+            Integer totalSalesRight, boolean strictRight) {
+        return getEntityHandler().selectEntitiesByRange("totalSales", totalSalesLeft, strictLeft,
+                totalSalesRight, strictRight);
     }
 
-    public List<BigInteger> collectIdsByTotalSalesRange(Integer leftSales, boolean strictLeft,
-            Integer rightSales, boolean strictRight) {
-        return getEntityHandler().collectKeysByRange("totalSales", leftSales, strictLeft,
-                rightSales, strictRight);
+    public List<BigInteger> collectIdsByTotalSalesRange(Integer totalSalesLeft, boolean strictLeft,
+            Integer totalSalesRight, boolean strictRight) {
+        return getEntityHandler().collectKeysByRange("totalSales", totalSalesLeft, strictLeft,
+                totalSalesRight, strictRight);
     }
 }

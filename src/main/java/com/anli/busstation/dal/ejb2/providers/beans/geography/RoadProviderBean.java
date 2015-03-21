@@ -22,16 +22,16 @@ public class RoadProviderBean extends AbstractBSProviderBean<Road> {
         return getEntityHandler().selectEntitiesByEqualsOrContains("aStation", aStation);
     }
 
-    public List<Road> findByAnyAStation(Collection<Station> aStationList) {
-        return getEntityHandler().selectEntitiesByAny("aStation", aStationList);
+    public List<Road> findByAnyAStation(Collection<Station> aStations) {
+        return getEntityHandler().selectEntitiesByAny("aStation", aStations);
     }
 
     public List<Road> findByZStation(Station zStation) {
         return getEntityHandler().selectEntitiesByEqualsOrContains("zStation", zStation);
     }
 
-    public List<Road> findByAnyZStation(Collection<Station> zStationList) {
-        return getEntityHandler().selectEntitiesByAny("zStation", zStationList);
+    public List<Road> findByAnyZStation(Collection<Station> zStations) {
+        return getEntityHandler().selectEntitiesByAny("zStation", zStations);
     }
 
     public List<Road> findByStation(Station station) {
@@ -43,39 +43,41 @@ public class RoadProviderBean extends AbstractBSProviderBean<Road> {
                 Arrays.asList(stationId, stationId));
     }
 
-    public List<Road> findByAnyStation(Collection<Station> stationList) {
-        if (stationList == null || stationList.isEmpty()) {
+    public List<Road> findByAnyStation(Collection<Station> stations) {
+        if (stations == null || stations.isEmpty()) {
             return Collections.emptyList();
         }
-        Collection<BigInteger> idList = getStationIds(stationList);
+        Collection<BigInteger> idList = getStationIds(stations);
         return getEntityHandler().selectEntitiesByNamedQuery("byAnyStation",
                 Arrays.asList(idList, idList));
     }
 
     public List<Road> findByLengthRange(Integer lengthLeft, boolean strictLeft,
             Integer lengthRight, boolean strictRight) {
-        return getEntityHandler().selectEntitiesByRange("length", lengthLeft, strictLeft, lengthRight, strictRight);
+        return getEntityHandler().selectEntitiesByRange("length", lengthLeft, strictLeft,
+                lengthRight, strictRight);
     }
 
-    public List<Road> findByRidePriceRange(BigDecimal rPriceLeft, boolean strictLeft,
-            BigDecimal rPriceRight, boolean strictRight) {
-        return getEntityHandler().selectEntitiesByRange("ridePrice", rPriceLeft, strictLeft, rPriceRight, strictRight);
+    public List<Road> findByRidePriceRange(BigDecimal ridePriceLeft, boolean strictLeft,
+            BigDecimal ridePriceRight, boolean strictRight) {
+        return getEntityHandler().selectEntitiesByRange("ridePrice", ridePriceLeft, strictLeft,
+                ridePriceRight, strictRight);
     }
 
     public List<BigInteger> collectIdsByAStation(Station aStation) {
         return getEntityHandler().collectKeysByEqualsOrContains("aStation", aStation);
     }
 
-    public List<BigInteger> collectIdsByAnyAStation(Collection<Station> aStationList) {
-        return getEntityHandler().collectKeysByAny("aStation", aStationList);
+    public List<BigInteger> collectIdsByAnyAStation(Collection<Station> aStations) {
+        return getEntityHandler().collectKeysByAny("aStation", aStations);
     }
 
     public List<BigInteger> collectIdsByZStation(Station zStation) {
         return getEntityHandler().collectKeysByEqualsOrContains("zStation", zStation);
     }
 
-    public List<BigInteger> collectIdsByAnyZStation(Collection<Station> zStationList) {
-        return getEntityHandler().collectKeysByAny("zStation", zStationList);
+    public List<BigInteger> collectIdsByAnyZStation(Collection<Station> zStations) {
+        return getEntityHandler().collectKeysByAny("zStation", zStations);
     }
 
     public List<BigInteger> collectIdsByStation(Station station) {
@@ -87,23 +89,25 @@ public class RoadProviderBean extends AbstractBSProviderBean<Road> {
                 Arrays.asList(stationId, stationId));
     }
 
-    public List<BigInteger> collectIdsByAnyStation(Collection<Station> stationList) {
-        if (stationList == null || stationList.isEmpty()) {
+    public List<BigInteger> collectIdsByAnyStation(Collection<Station> stations) {
+        if (stations == null || stations.isEmpty()) {
             return Collections.emptyList();
         }
-        Collection<BigInteger> idList = getStationIds(stationList);
+        Collection<BigInteger> idList = getStationIds(stations);
         return getEntityHandler().collectKeysByNamedQuery("byAnyStation",
                 Arrays.asList(idList, idList));
     }
 
     public List<BigInteger> collectIdsByLengthRange(Integer lengthLeft, boolean strictLeft,
             Integer lengthRight, boolean strictRight) {
-        return getEntityHandler().collectKeysByRange("length", lengthLeft, strictLeft, lengthRight, strictRight);
+        return getEntityHandler().collectKeysByRange("length", lengthLeft, strictLeft,
+                lengthRight, strictRight);
     }
 
     public List<BigInteger> collectIdsByRidePriceRange(BigDecimal rPriceLeft, boolean strictLeft,
             BigDecimal rPriceRight, boolean strictRight) {
-        return getEntityHandler().collectKeysByRange("ridePrice", rPriceLeft, strictLeft, rPriceRight, strictRight);
+        return getEntityHandler().collectKeysByRange("ridePrice", rPriceLeft, strictLeft,
+                rPriceRight, strictRight);
     }
 
     protected Collection<BigInteger> getStationIds(Collection<Station> stations) {

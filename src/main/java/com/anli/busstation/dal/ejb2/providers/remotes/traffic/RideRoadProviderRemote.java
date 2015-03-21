@@ -13,17 +13,17 @@ public interface RideRoadProviderRemote extends BSEntityProviderRemote<RideRoad>
 
     List<RideRoad> findByRoad(Road road) throws RemoteException;
 
-    List<RideRoad> findByAnyRoad(Collection<Road> roadList) throws RemoteException;
+    List<RideRoad> findByAnyRoad(Collection<Road> roads) throws RemoteException;
 
     List<RideRoad> findByDriver(Driver driver) throws RemoteException;
 
-    List<RideRoad> findByAnyDriver(Collection<Driver> driverList) throws RemoteException;
+    List<RideRoad> findByAnyDriver(Collection<Driver> drivers) throws RemoteException;
 
     List<BigInteger> collectIdsByRoad(Road road) throws RemoteException;
 
-    List<BigInteger> collectIdsByAnyRoad(Collection<Road> roadList) throws RemoteException;
+    List<BigInteger> collectIdsByAnyRoad(Collection<Road> roads) throws RemoteException;
 
     List<BigInteger> collectIdsByDriver(Driver driver) throws RemoteException;
 
-    List<BigInteger> collectIdsByAnyDriver(Collection<Driver> driverList) throws RemoteException;
+    List<BigInteger> collectIdsByAnyDriver(Collection<Driver> drivers) throws RemoteException;
 }

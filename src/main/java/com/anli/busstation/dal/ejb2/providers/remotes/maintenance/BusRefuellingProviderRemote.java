@@ -7,9 +7,9 @@ import java.util.List;
 
 public interface BusRefuellingProviderRemote extends GenericBusServiceProviderRemote<BusRefuelling> {
 
-    List<BusRefuelling> findByVolumeRange(Integer gasVolumeLeft, boolean leftStrict,
-            Integer gasVolumeRight, boolean rightStrict) throws RemoteException;
+    List<BusRefuelling> findByVolumeRange(Integer volumeLeft, boolean leftStrict,
+            Integer volumeRight, boolean rightStrict) throws RemoteException;
 
-    List<BigInteger> collectIdsByVolumeRange(Integer gasVolumeLeft, boolean leftStrict,
-            Integer gasVolumeRight, boolean rightStrict) throws RemoteException;
+    List<BigInteger> collectIdsByVolumeRange(Integer volumeLeft, boolean leftStrict,
+            Integer volumeRight, boolean rightStrict) throws RemoteException;
 }

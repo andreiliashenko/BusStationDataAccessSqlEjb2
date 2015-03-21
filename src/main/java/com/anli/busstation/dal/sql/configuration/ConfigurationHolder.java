@@ -27,7 +27,8 @@ public class ConfigurationHolder {
     private static final SqlExecutor executor = new SqlExecutor(getDataSource(), getTransformerFactory());
     private static final EntityHandlerConfiguration handlerConfig
             = new EntityHandlerConfiguration(definitionConfig, gatewayConfig, executor);
-    private static final IdGenerator idGenerator = new TableIdGenerator(executor, getTransactionManager());
+    private static final IdGenerator idGenerator = new TableIdGenerator(executor, getTransactionManager(),
+            "bs_entity", 1);
 
     private static TransformerFactory getTransformerFactory() {
         Map<Class, SqlTransformer> transformers = new HashMap<>();

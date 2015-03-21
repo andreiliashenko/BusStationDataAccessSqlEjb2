@@ -18,37 +18,37 @@ public interface StationProviderRemote extends BSEntityProviderRemote<Station> {
 
     List<Station> findByName(String name) throws RemoteException;
 
-    List<Station> findByNameRegexp(String regexpName) throws RemoteException;
+    List<Station> findByNameRegexp(String nameRegexp) throws RemoteException;
 
-    List<Station> findByLatitudeRange(BigDecimal leftLat, boolean strictLeft,
-            BigDecimal rightLat, boolean strictRight) throws RemoteException;
+    List<Station> findByLatitudeRange(BigDecimal latitudeLeft, boolean strictLeft,
+            BigDecimal latitudeRight, boolean strictRight) throws RemoteException;
 
-    List<Station> findByLongitudeRange(BigDecimal leftLon, boolean strictLeft,
-            BigDecimal rightLon, boolean strictRight) throws RemoteException;
+    List<Station> findByLongitudeRange(BigDecimal longitudeLeft, boolean strictLeft,
+            BigDecimal longitudeRight, boolean strictRight) throws RemoteException;
 
     List<Station> findByEmployee(Employee employee) throws RemoteException;
 
-    List<Station> findByAnyEmployee(Collection<Employee> employeeList) throws RemoteException;
+    List<Station> findByAnyEmployee(Collection<Employee> employees) throws RemoteException;
 
     List<Station> findByBus(Bus bus) throws RemoteException;
 
-    List<Station> findByAnyBus(Collection<Bus> busList) throws RemoteException;
+    List<Station> findByAnyBus(Collection<Bus> buses) throws RemoteException;
 
     List<BigInteger> collectIdsByName(String name) throws RemoteException;
 
-    List<BigInteger> collectIdsByNameRegexp(String regexpName) throws RemoteException;
+    List<BigInteger> collectIdsByNameRegexp(String nameRegexp) throws RemoteException;
 
-    List<BigInteger> collectIdsByLatitudeRange(BigDecimal leftLat, boolean strictLeft,
-            BigDecimal rightLat, boolean strictRight) throws RemoteException;
+    List<BigInteger> collectIdsByLatitudeRange(BigDecimal latitudeLeft, boolean strictLeft,
+            BigDecimal latitudeRight, boolean strictRight) throws RemoteException;
 
-    List<BigInteger> collectIdsByLongitudeRange(BigDecimal leftLon, boolean strictLeft,
-            BigDecimal rightLon, boolean strictRight) throws RemoteException;
+    List<BigInteger> collectIdsByLongitudeRange(BigDecimal longitudeLeft, boolean strictLeft,
+            BigDecimal longitudeRight, boolean strictRight) throws RemoteException;
 
     List<BigInteger> collectIdsByEmployee(Employee employee) throws RemoteException;
 
-    List<BigInteger> collectIdsByAnyEmployee(Collection<Employee> employeeList) throws RemoteException;
+    List<BigInteger> collectIdsByAnyEmployee(Collection<Employee> employees) throws RemoteException;
 
     List<BigInteger> collectIdsByBus(Bus bus) throws RemoteException;
 
-    List<BigInteger> collectIdsByAnyBus(Collection<Bus> busList) throws RemoteException;
+    List<BigInteger> collectIdsByAnyBus(Collection<Bus> buses) throws RemoteException;
 }

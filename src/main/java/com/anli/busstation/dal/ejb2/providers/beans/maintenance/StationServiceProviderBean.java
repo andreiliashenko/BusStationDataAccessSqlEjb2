@@ -11,11 +11,11 @@ public class StationServiceProviderBean extends AbstractTechnicalAssignmentProvi
         return "StationService";
     }
 
-    public List<StationService> findByDescriptionRegexp(String descrRegexp) {
-        return getEntityHandler().selectEntitiesByRegexp("description", descrRegexp);
+    public List<StationService> findByDescriptionRegexp(String descriptionRegexp) {
+        return getEntityHandler().selectEntitiesByRegexp("description", descriptionRegexp);
     }
 
-    public List<BigInteger> collectIdsByDescriptionRegexp(String descrRegexp) {
-        return getEntityHandler().collectKeysByRegexp("description", descrRegexp);
+    public List<BigInteger> collectIdsByDescriptionRegexp(String descriptionRegexp) {
+        return getEntityHandler().collectKeysByRegexp("description", descriptionRegexp);
     }
 }

@@ -13,13 +13,13 @@ import org.joda.time.DateTime;
 
 public interface TicketProviderRemote extends BSEntityProviderRemote<Ticket> {
 
-    List<Ticket> findByDeparturePoint(RidePoint point) throws RemoteException;
+    List<Ticket> findByDeparturePoint(RidePoint departurePoint) throws RemoteException;
 
-    List<Ticket> findByAnyDeparturePoint(Collection<RidePoint> pointList) throws RemoteException;
+    List<Ticket> findByAnyDeparturePoint(Collection<RidePoint> departurePoints) throws RemoteException;
 
-    List<Ticket> findByArrivalPoint(RidePoint point) throws RemoteException;
+    List<Ticket> findByArrivalPoint(RidePoint arrivalPoint) throws RemoteException;
 
-    List<Ticket> findByAnyArrivalPoint(Collection<RidePoint> pointList) throws RemoteException;
+    List<Ticket> findByAnyArrivalPoint(Collection<RidePoint> arrivalPoints) throws RemoteException;
 
     List<Ticket> findBySeat(Integer seat) throws RemoteException;
 
@@ -28,27 +28,27 @@ public interface TicketProviderRemote extends BSEntityProviderRemote<Ticket> {
 
     List<Ticket> findBySalesman(Salesman salesman) throws RemoteException;
 
-    List<Ticket> findByAnySalesman(Collection<Salesman> salesmenList) throws RemoteException;
+    List<Ticket> findByAnySalesman(Collection<Salesman> salesmen) throws RemoteException;
 
-    List<Ticket> findBySaleDateRange(DateTime dateLeft, boolean strictLeft,
-            DateTime dateRight, boolean strictRight) throws RemoteException;
+    List<Ticket> findBySaleDateRange(DateTime saleDateLeft, boolean strictLeft,
+            DateTime saleDateRight, boolean strictRight) throws RemoteException;
 
-    List<Ticket> findByCustomerName(String custName) throws RemoteException;
+    List<Ticket> findByCustomerName(String customerName) throws RemoteException;
 
-    List<Ticket> findByCustomerNameRegexp(String custNameRegexp) throws RemoteException;
+    List<Ticket> findByCustomerNameRegexp(String customerNameRegexp) throws RemoteException;
 
     List<Ticket> findByPriceRange(BigDecimal priceLeft, boolean strictLeft,
             BigDecimal priceRight, boolean strictRight) throws RemoteException;
 
     List<Ticket> findBySold(boolean sold) throws RemoteException;
 
-    List<BigInteger> collectIdsByDeparturePoint(RidePoint point) throws RemoteException;
+    List<BigInteger> collectIdsByDeparturePoint(RidePoint departurePoint) throws RemoteException;
 
-    List<BigInteger> collectIdsByAnyDeparturePoint(Collection<RidePoint> pointList) throws RemoteException;
+    List<BigInteger> collectIdsByAnyDeparturePoint(Collection<RidePoint> departurePoints) throws RemoteException;
 
-    List<BigInteger> collectIdsByArrivalPoint(RidePoint point) throws RemoteException;
+    List<BigInteger> collectIdsByArrivalPoint(RidePoint arrivalPoint) throws RemoteException;
 
-    List<BigInteger> collectIdsByAnyArrivalPoint(Collection<RidePoint> pointList) throws RemoteException;
+    List<BigInteger> collectIdsByAnyArrivalPoint(Collection<RidePoint> arrivalPoints) throws RemoteException;
 
     List<BigInteger> collectIdsBySeat(Integer seat) throws RemoteException;
 
@@ -57,14 +57,14 @@ public interface TicketProviderRemote extends BSEntityProviderRemote<Ticket> {
 
     List<BigInteger> collectIdsBySalesman(Salesman salesman) throws RemoteException;
 
-    List<BigInteger> collectIdsByAnySalesman(Collection<Salesman> salesmenList) throws RemoteException;
+    List<BigInteger> collectIdsByAnySalesman(Collection<Salesman> salesmen) throws RemoteException;
 
-    List<BigInteger> collectIdsBySaleDateRange(DateTime dateLeft, boolean strictLeft,
-            DateTime dateRight, boolean strictRight) throws RemoteException;
+    List<BigInteger> collectIdsBySaleDateRange(DateTime saleDateLeft, boolean strictLeft,
+            DateTime saleDateRight, boolean strictRight) throws RemoteException;
 
-    List<BigInteger> collectIdsByCustomerName(String custName) throws RemoteException;
+    List<BigInteger> collectIdsByCustomerName(String customerName) throws RemoteException;
 
-    List<BigInteger> collectIdsByCustomerNameRegexp(String custNameRegexp) throws RemoteException;
+    List<BigInteger> collectIdsByCustomerNameRegexp(String customerNameRegexp) throws RemoteException;
 
     List<BigInteger> collectIdsByPriceRange(BigDecimal priceLeft, boolean strictLeft,
             BigDecimal priceRight, boolean strictRight) throws RemoteException;

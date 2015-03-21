@@ -23,30 +23,30 @@ public class ModelProviderBean extends AbstractBSProviderBean<Model> {
         return getEntityHandler().selectEntitiesByRegexp("name", nameRegexp);
     }
 
-    public List<Model> findBySeatsNumberRange(Integer seatsLeft, boolean strictLeft,
-            Integer seatsRight, boolean strictRight) {
-        return getEntityHandler().selectEntitiesByRange("seatsNumber", seatsLeft, strictLeft,
-                seatsRight, strictRight);
+    public List<Model> findBySeatsNumberRange(Integer seatsNumberLeft, boolean strictLeft,
+            Integer seatsNumberRight, boolean strictRight) {
+        return getEntityHandler().selectEntitiesByRange("seatsNumber", seatsNumberLeft, strictLeft,
+                seatsNumberRight, strictRight);
     }
 
-    public List<Model> findByGasLabel(GasLabel label) {
-        return getEntityHandler().selectEntitiesByEqualsOrContains("gasLabel", label);
+    public List<Model> findByGasLabel(GasLabel gasLabel) {
+        return getEntityHandler().selectEntitiesByEqualsOrContains("gasLabel", gasLabel);
     }
 
-    public List<Model> findByAnyGasLabel(Collection<GasLabel> labelList) {
-        return getEntityHandler().selectEntitiesByAny("gasLabel", labelList);
+    public List<Model> findByAnyGasLabel(Collection<GasLabel> gasLabels) {
+        return getEntityHandler().selectEntitiesByAny("gasLabel", gasLabels);
     }
 
-    public List<Model> findByGasRateRange(BigDecimal rateLeft, boolean strictLeft,
-            BigDecimal rateRight, boolean strictRight) {
-        return getEntityHandler().selectEntitiesByRange("gasRate", rateLeft, strictLeft,
-                rateRight, strictRight);
+    public List<Model> findByGasRateRange(BigDecimal gasRateLeft, boolean strictLeft,
+            BigDecimal gasRateRight, boolean strictRight) {
+        return getEntityHandler().selectEntitiesByRange("gasRate", gasRateLeft, strictLeft,
+                gasRateRight, strictRight);
     }
 
-    public List<Model> findByTankVolumeRange(Integer tvLeft, boolean strictLeft,
-            Integer tvRight, boolean strictRight) {
-        return getEntityHandler().selectEntitiesByRange("tankVolume", tvLeft, strictLeft,
-                tvRight, strictRight);
+    public List<Model> findByTankVolumeRange(Integer tankVolumeLeft, boolean strictLeft,
+            Integer tankVolumeRight, boolean strictRight) {
+        return getEntityHandler().selectEntitiesByRange("tankVolume", tankVolumeLeft, strictLeft,
+                tankVolumeRight, strictRight);
     }
 
     public List<BigInteger> collectIdsByName(String name) {
@@ -57,29 +57,29 @@ public class ModelProviderBean extends AbstractBSProviderBean<Model> {
         return getEntityHandler().collectKeysByRegexp("name", nameRegexp);
     }
 
-    public List<BigInteger> collectIdsBySeatsNumberRange(Integer seatsLeft, boolean strictLeft,
-            Integer seatsRight, boolean strictRight) {
-        return getEntityHandler().collectKeysByRange("seatsNumber", seatsLeft, strictLeft,
-                seatsRight, strictRight);
+    public List<BigInteger> collectIdsBySeatsNumberRange(Integer seatsNumberLeft, boolean strictLeft,
+            Integer seatsNumberRight, boolean strictRight) {
+        return getEntityHandler().collectKeysByRange("seatsNumber", seatsNumberLeft, strictLeft,
+                seatsNumberRight, strictRight);
     }
 
-    public List<BigInteger> collectIdsByGasLabel(GasLabel label) {
-        return getEntityHandler().collectKeysByEqualsOrContains("gasLabel", label);
+    public List<BigInteger> collectIdsByGasLabel(GasLabel gasLabel) {
+        return getEntityHandler().collectKeysByEqualsOrContains("gasLabel", gasLabel);
     }
 
-    public List<BigInteger> collectIdsByAnyGasLabel(Collection<GasLabel> labelList) {
-        return getEntityHandler().collectKeysByAny("gasLabel", labelList);
+    public List<BigInteger> collectIdsByAnyGasLabel(Collection<GasLabel> gasLabels) {
+        return getEntityHandler().collectKeysByAny("gasLabel", gasLabels);
     }
 
-    public List<BigInteger> collectIdsByGasRateRange(BigDecimal rateLeft, boolean strictLeft,
-            BigDecimal rateRight, boolean strictRight) {
-        return getEntityHandler().collectKeysByRange("gasRate", rateLeft, strictLeft,
-                rateRight, strictRight);
+    public List<BigInteger> collectIdsByGasRateRange(BigDecimal gasRateLeft, boolean strictLeft,
+            BigDecimal gasRateRight, boolean strictRight) {
+        return getEntityHandler().collectKeysByRange("gasRate", gasRateLeft, strictLeft,
+                gasRateRight, strictRight);
     }
 
-    public List<BigInteger> collectIdsByTankVolumeRange(Integer tvLeft, boolean strictLeft,
-            Integer tvRight, boolean strictRight) {
-        return getEntityHandler().collectKeysByRange("tankVolume", tvLeft, strictLeft,
-                tvRight, strictRight);
+    public List<BigInteger> collectIdsByTankVolumeRange(Integer tankVolumeLeft, boolean strictLeft,
+            Integer tankVolumeRight, boolean strictRight) {
+        return getEntityHandler().collectKeysByRange("tankVolume", tankVolumeLeft, strictLeft,
+                tankVolumeRight, strictRight);
     }
 }

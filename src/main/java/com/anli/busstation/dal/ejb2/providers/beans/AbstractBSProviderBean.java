@@ -74,6 +74,6 @@ public abstract class AbstractBSProviderBean<I extends BSEntity> implements Sess
     }
 
     @Override
-    public void setSessionContext(SessionContext sc) {
+    public void setSessionContext(SessionContext context) {
     }
 }

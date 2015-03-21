@@ -13,21 +13,21 @@ public interface RidePointProviderRemote extends BSEntityProviderRemote<RidePoin
 
     List<RidePoint> findByRoutePoint(RoutePoint routePoint) throws RemoteException;
 
-    List<RidePoint> findByAnyRoutePoint(Collection<RoutePoint> routePointList) throws RemoteException;
+    List<RidePoint> findByAnyRoutePoint(Collection<RoutePoint> routePoints) throws RemoteException;
 
-    List<RidePoint> findByArrivalTimeRange(DateTime leftTime, boolean leftStrict,
-            DateTime rightTime, boolean rightStrict) throws RemoteException;
+    List<RidePoint> findByArrivalTimeRange(DateTime arrivalTimeLeft, boolean leftStrict,
+            DateTime arrivalTimeRight, boolean rightStrict) throws RemoteException;
 
-    List<RidePoint> findByDepartureTimeRange(DateTime leftTime, boolean leftStrict,
-            DateTime rightTime, boolean rightStrict) throws RemoteException;
+    List<RidePoint> findByDepartureTimeRange(DateTime departureTimeLeft, boolean leftStrict,
+            DateTime departureTimeRight, boolean rightStrict) throws RemoteException;
 
     List<BigInteger> collectIdsByRoutePoint(RoutePoint routePoint) throws RemoteException;
 
-    List<BigInteger> collectIdsByAnyRoutePoint(Collection<RoutePoint> routePointList) throws RemoteException;
+    List<BigInteger> collectIdsByAnyRoutePoint(Collection<RoutePoint> routePoints) throws RemoteException;
 
-    List<BigInteger> collectIdsByArrivalTimeRange(DateTime leftTime, boolean leftStrict,
-            DateTime rightTime, boolean rightStrict) throws RemoteException;
+    List<BigInteger> collectIdsByArrivalTimeRange(DateTime arrivalTimeLeft, boolean leftStrict,
+            DateTime arrivalTimeRight, boolean rightStrict) throws RemoteException;
 
-    List<BigInteger> collectIdsByDepartureTimeRange(DateTime leftTime, boolean leftStrict,
-            DateTime rightTime, boolean rightStrict) throws RemoteException;
+    List<BigInteger> collectIdsByDepartureTimeRange(DateTime departureTimeLeft, boolean leftStrict,
+            DateTime departureTimeRight, boolean rightStrict) throws RemoteException;
 }

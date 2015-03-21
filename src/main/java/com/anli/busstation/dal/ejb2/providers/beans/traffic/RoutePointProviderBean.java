@@ -18,15 +18,15 @@ public class RoutePointProviderBean extends AbstractBSProviderBean<RoutePoint> {
         return getEntityHandler().selectEntitiesByEqualsOrContains("station", station);
     }
 
-    public List<RoutePoint> findByAnyStation(Collection<Station> stationList) {
-        return getEntityHandler().selectEntitiesByAny("station", stationList);
+    public List<RoutePoint> findByAnyStation(Collection<Station> stations) {
+        return getEntityHandler().selectEntitiesByAny("station", stations);
     }
 
     public List<BigInteger> collectIdsByStation(Station station) {
         return getEntityHandler().collectKeysByEqualsOrContains("station", station);
     }
 
-    public List<BigInteger> collectIdsByAnyStation(Collection<Station> stationList) {
-        return getEntityHandler().collectKeysByAny("station", stationList);
+    public List<BigInteger> collectIdsByAnyStation(Collection<Station> stations) {
+        return getEntityHandler().collectKeysByAny("station", stations);
     }
 }

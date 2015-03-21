@@ -13,6 +13,4 @@ public class BusServiceProviderBean extends AbstractBusServiceProviderBean<BusSe
     public BusService create() {
         return null;
     }
-
-    
 }

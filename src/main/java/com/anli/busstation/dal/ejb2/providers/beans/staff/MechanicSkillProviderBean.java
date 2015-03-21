@@ -20,10 +20,10 @@ public class MechanicSkillProviderBean extends AbstractBSProviderBean<MechanicSk
         return getEntityHandler().selectEntitiesByRegexp("name", nameRegexp);
     }
 
-    public List<MechanicSkill> findByMaxDiffLevelRange(Integer mdlLeft, boolean leftStrict,
-            Integer mdlRight, boolean rightStrict) {
-        return getEntityHandler().selectEntitiesByRange("maxDiffLevel", mdlLeft, leftStrict,
-                mdlRight, rightStrict);
+    public List<MechanicSkill> findByMaxDiffLevelRange(Integer maxDiffLevelLeft, boolean leftStrict,
+            Integer maxDiffLevelRight, boolean rightStrict) {
+        return getEntityHandler().selectEntitiesByRange("maxDiffLevel", maxDiffLevelLeft, leftStrict,
+                maxDiffLevelRight, rightStrict);
     }
 
     public List<BigInteger> collectIdsByName(String name) {
@@ -34,9 +34,9 @@ public class MechanicSkillProviderBean extends AbstractBSProviderBean<MechanicSk
         return getEntityHandler().collectKeysByRegexp("name", nameRegexp);
     }
 
-    public List<BigInteger> collectIdsByMaxDiffLevelRange(Integer mdlLeft, boolean leftStrict,
-            Integer mdlRight, boolean rightStrict) {
-        return getEntityHandler().collectKeysByRange("maxDiffLevel", mdlLeft, leftStrict,
-                mdlRight, rightStrict);
+    public List<BigInteger> collectIdsByMaxDiffLevelRange(Integer maxDiffLevelLeft, boolean leftStrict,
+            Integer maxDiffLevelRight, boolean rightStrict) {
+        return getEntityHandler().collectKeysByRange("maxDiffLevel", maxDiffLevelLeft, leftStrict,
+                maxDiffLevelRight, rightStrict);
     }
 }

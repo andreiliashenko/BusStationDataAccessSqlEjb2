@@ -30,71 +30,71 @@ public class StationProviderBean extends AbstractBSProviderBean<Station> {
         return getEntityHandler().selectEntitiesByEqualsOrContains("name", name);
     }
 
-    public List<Station> findByNameRegexp(String regexpName) {
-        return getEntityHandler().selectEntitiesByRegexp("name", regexpName);
+    public List<Station> findByNameRegexp(String nameRegexp) {
+        return getEntityHandler().selectEntitiesByRegexp("name", nameRegexp);
     }
 
-    public List<Station> findByLatitudeRange(BigDecimal leftLat, boolean strictLeft,
-            BigDecimal rightLat, boolean strictRight) {
-        return getEntityHandler().selectEntitiesByRange("latitude", leftLat,
-                strictLeft, rightLat, strictRight);
+    public List<Station> findByLatitudeRange(BigDecimal latitudeLeft, boolean strictLeft,
+            BigDecimal latitudeRight, boolean strictRight) {
+        return getEntityHandler().selectEntitiesByRange("latitude", latitudeLeft,
+                strictLeft, latitudeRight, strictRight);
     }
 
-    public List<Station> findByLongitudeRange(BigDecimal leftLon, boolean strictLeft,
-            BigDecimal rightLon, boolean strictRight) {
-        return getEntityHandler().selectEntitiesByRange("longitude", leftLon,
-                strictLeft, rightLon, strictRight);
+    public List<Station> findByLongitudeRange(BigDecimal longitudeLeft, boolean strictLeft,
+            BigDecimal longitudeRight, boolean strictRight) {
+        return getEntityHandler().selectEntitiesByRange("longitude", longitudeLeft,
+                strictLeft, longitudeRight, strictRight);
     }
 
     public List<Station> findByEmployee(Employee employee) {
         return getEntityHandler().selectEntitiesByEqualsOrContains("employees", employee);
     }
 
-    public List<Station> findByAnyEmployee(Collection<Employee> employeeList) {
-        return getEntityHandler().selectEntitiesByAny("employees", employeeList);
+    public List<Station> findByAnyEmployee(Collection<Employee> employees) {
+        return getEntityHandler().selectEntitiesByAny("employees", employees);
     }
 
     public List<Station> findByBus(Bus bus) {
         return getEntityHandler().selectEntitiesByEqualsOrContains("buses", bus);
     }
 
-    public List<Station> findByAnyBus(Collection<Bus> busList) {
-        return getEntityHandler().selectEntitiesByAny("buses", busList);
+    public List<Station> findByAnyBus(Collection<Bus> buses) {
+        return getEntityHandler().selectEntitiesByAny("buses", buses);
     }
 
     public List<BigInteger> collectIdsByName(String name) {
         return getEntityHandler().collectKeysByEqualsOrContains("name", name);
     }
 
-    public List<BigInteger> collectIdsByNameRegexp(String regexpName) {
-        return getEntityHandler().collectKeysByRegexp("name", regexpName);
+    public List<BigInteger> collectIdsByNameRegexp(String nameRegexp) {
+        return getEntityHandler().collectKeysByRegexp("name", nameRegexp);
     }
 
-    public List<BigInteger> collectIdsByLatitudeRange(BigDecimal leftLat, boolean strictLeft,
-            BigDecimal rightLat, boolean strictRight) {
-        return getEntityHandler().collectKeysByRange("latitude", leftLat, strictLeft,
-                rightLat, strictRight);
+    public List<BigInteger> collectIdsByLatitudeRange(BigDecimal latitudeLeft, boolean strictLeft,
+            BigDecimal latitudeRight, boolean strictRight) {
+        return getEntityHandler().collectKeysByRange("latitude", latitudeLeft, strictLeft,
+                latitudeRight, strictRight);
     }
 
-    public List<BigInteger> collectIdsByLongitudeRange(BigDecimal leftLon, boolean strictLeft,
-            BigDecimal rightLon, boolean strictRight) {
-        return getEntityHandler().collectKeysByRange("longitude", leftLon, strictLeft,
-                rightLon, strictRight);
+    public List<BigInteger> collectIdsByLongitudeRange(BigDecimal longitudeLeft, boolean strictLeft,
+            BigDecimal longitudeRight, boolean strictRight) {
+        return getEntityHandler().collectKeysByRange("longitude", longitudeLeft, strictLeft,
+                longitudeRight, strictRight);
     }
 
     public List<BigInteger> collectIdsByEmployee(Employee employee) {
         return getEntityHandler().collectKeysByEqualsOrContains("employees", employee);
     }
 
-    public List<BigInteger> collectIdsByAnyEmployee(Collection<Employee> employeeList) {
-        return getEntityHandler().collectKeysByAny("employees", employeeList);
+    public List<BigInteger> collectIdsByAnyEmployee(Collection<Employee> employees) {
+        return getEntityHandler().collectKeysByAny("employees", employees);
     }
 
     public List<BigInteger> collectIdsByBus(Bus bus) {
         return getEntityHandler().collectKeysByEqualsOrContains("buses", bus);
     }
 
-    public List<BigInteger> collectIdsByAnyBus(Collection<Bus> busList) {
-        return getEntityHandler().collectKeysByAny("buses", busList);
+    public List<BigInteger> collectIdsByAnyBus(Collection<Bus> buses) {
+        return getEntityHandler().collectKeysByAny("buses", buses);
     }
 }

@@ -6,7 +6,8 @@ import java.math.BigInteger;
 import java.util.Collection;
 import java.util.List;
 
-public abstract class AbstractBusServiceProviderBean<I extends BusService> extends AbstractTechnicalAssignmentProviderBean<I> {
+public abstract class AbstractBusServiceProviderBean<I extends BusService>
+        extends AbstractTechnicalAssignmentProviderBean<I> {
 
     public List<I> findByBus(Bus bus) {
         return getEntityHandler().selectEntitiesByEqualsOrContains("bus", bus);

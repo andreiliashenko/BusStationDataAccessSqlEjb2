@@ -8,9 +8,9 @@ import java.util.List;
 
 public interface BusRepairmentProviderRemote extends GenericBusServiceProviderRemote<BusRepairment> {
 
-    List<BusRepairment> findByExpendablesPriceRange(BigDecimal exPriceLeft, boolean leftStrict,
-            BigDecimal exPriceRight, boolean rightStrict) throws RemoteException;
+    List<BusRepairment> findByExpendablesPriceRange(BigDecimal expendablesPriceLeft, boolean leftStrict,
+            BigDecimal expendablesPriceRight, boolean rightStrict) throws RemoteException;
 
-    List<BigInteger> collectIdsByExpendablesPriceRange(BigDecimal exPriceLeft, boolean leftStrict,
-            BigDecimal exPriceRight, boolean rightStrict) throws RemoteException;
+    List<BigInteger> collectIdsByExpendablesPriceRange(BigDecimal expendablesPriceLeft, boolean leftStrict,
+            BigDecimal expendablesPriceRight, boolean rightStrict) throws RemoteException;
 }

@@ -17,20 +17,20 @@ public class TicketProviderBean extends AbstractBSProviderBean<Ticket> {
         return "Ticket";
     }
 
-    public List<Ticket> findByDeparturePoint(RidePoint point) {
-        return getEntityHandler().selectEntitiesByEqualsOrContains("departurePoint", point);
+    public List<Ticket> findByDeparturePoint(RidePoint departurePoint) {
+        return getEntityHandler().selectEntitiesByEqualsOrContains("departurePoint", departurePoint);
     }
 
-    public List<Ticket> findByAnyDeparturePoint(Collection<RidePoint> pointList) {
-        return getEntityHandler().selectEntitiesByAny("departurePoint", pointList);
+    public List<Ticket> findByAnyDeparturePoint(Collection<RidePoint> departurePoints) {
+        return getEntityHandler().selectEntitiesByAny("departurePoint", departurePoints);
     }
 
-    public List<Ticket> findByArrivalPoint(RidePoint point) {
-        return getEntityHandler().selectEntitiesByEqualsOrContains("arrivalPoint", point);
+    public List<Ticket> findByArrivalPoint(RidePoint arrivalPoint) {
+        return getEntityHandler().selectEntitiesByEqualsOrContains("arrivalPoint", arrivalPoint);
     }
 
-    public List<Ticket> findByAnyArrivalPoint(Collection<RidePoint> pointList) {
-        return getEntityHandler().selectEntitiesByAny("arrivalPoint", pointList);
+    public List<Ticket> findByAnyArrivalPoint(Collection<RidePoint> arrivalPoints) {
+        return getEntityHandler().selectEntitiesByAny("arrivalPoint", arrivalPoints);
     }
 
     public List<Ticket> findBySeat(Integer seat) {
@@ -47,22 +47,22 @@ public class TicketProviderBean extends AbstractBSProviderBean<Ticket> {
         return getEntityHandler().selectEntitiesByEqualsOrContains("salesman", salesman);
     }
 
-    public List<Ticket> findByAnySalesman(Collection<Salesman> salesmenList) {
-        return getEntityHandler().selectEntitiesByAny("salesman", salesmenList);
+    public List<Ticket> findByAnySalesman(Collection<Salesman> salesmen) {
+        return getEntityHandler().selectEntitiesByAny("salesman", salesmen);
     }
 
-    public List<Ticket> findBySaleDateRange(DateTime dateLeft, boolean strictLeft,
-            DateTime dateRight, boolean strictRight) {
-        return getEntityHandler().selectEntitiesByRange("saleDate", dateLeft, strictLeft,
-                dateRight, strictRight);
+    public List<Ticket> findBySaleDateRange(DateTime saleDateLeft, boolean strictLeft,
+            DateTime saleDateRight, boolean strictRight) {
+        return getEntityHandler().selectEntitiesByRange("saleDate", saleDateLeft, strictLeft,
+                saleDateRight, strictRight);
     }
 
-    public List<Ticket> findByCustomerName(String custName) {
-        return getEntityHandler().selectEntitiesByEqualsOrContains("customerName", custName);
+    public List<Ticket> findByCustomerName(String customerName) {
+        return getEntityHandler().selectEntitiesByEqualsOrContains("customerName", customerName);
     }
 
-    public List<Ticket> findByCustomerNameRegexp(String custNameRegexp) {
-        return getEntityHandler().selectEntitiesByRegexp("customerName", custNameRegexp);
+    public List<Ticket> findByCustomerNameRegexp(String customerNameRegexp) {
+        return getEntityHandler().selectEntitiesByRegexp("customerName", customerNameRegexp);
     }
 
     public List<Ticket> findByPriceRange(BigDecimal priceLeft, boolean strictLeft,
@@ -75,20 +75,20 @@ public class TicketProviderBean extends AbstractBSProviderBean<Ticket> {
         return getEntityHandler().selectEntitiesByEqualsOrContains("sold", sold);
     }
 
-    public List<BigInteger> collectIdsByDeparturePoint(RidePoint point) {
-        return getEntityHandler().collectKeysByEqualsOrContains("departurePoint", point);
+    public List<BigInteger> collectIdsByDeparturePoint(RidePoint departurePoint) {
+        return getEntityHandler().collectKeysByEqualsOrContains("departurePoint", departurePoint);
     }
 
-    public List<BigInteger> collectIdsByAnyDeparturePoint(Collection<RidePoint> pointList) {
-        return getEntityHandler().collectKeysByAny("departurePoint", pointList);
+    public List<BigInteger> collectIdsByAnyDeparturePoint(Collection<RidePoint> departurePoints) {
+        return getEntityHandler().collectKeysByAny("departurePoint", departurePoints);
     }
 
-    public List<BigInteger> collectIdsByArrivalPoint(RidePoint point) {
-        return getEntityHandler().collectKeysByEqualsOrContains("arrivalPoint", point);
+    public List<BigInteger> collectIdsByArrivalPoint(RidePoint arrivalPoint) {
+        return getEntityHandler().collectKeysByEqualsOrContains("arrivalPoint", arrivalPoint);
     }
 
-    public List<BigInteger> collectIdsByAnyArrivalPoint(Collection<RidePoint> pointList) {
-        return getEntityHandler().collectKeysByAny("arrivalPoint", pointList);
+    public List<BigInteger> collectIdsByAnyArrivalPoint(Collection<RidePoint> arrivalPoints) {
+        return getEntityHandler().collectKeysByAny("arrivalPoint", arrivalPoints);
     }
 
     public List<BigInteger> collectIdsBySeat(Integer seat) {
@@ -105,22 +105,22 @@ public class TicketProviderBean extends AbstractBSProviderBean<Ticket> {
         return getEntityHandler().collectKeysByEqualsOrContains("salesman", salesman);
     }
 
-    public List<BigInteger> collectIdsByAnySalesman(Collection<Salesman> salesmenList) {
-        return getEntityHandler().collectKeysByAny("salesman", salesmenList);
+    public List<BigInteger> collectIdsByAnySalesman(Collection<Salesman> salesmen) {
+        return getEntityHandler().collectKeysByAny("salesman", salesmen);
     }
 
-    public List<BigInteger> collectIdsBySaleDateRange(DateTime dateLeft, boolean strictLeft,
-            DateTime dateRight, boolean strictRight) {
-        return getEntityHandler().collectKeysByRange("saleDate", dateLeft, strictLeft,
-                dateRight, strictRight);
+    public List<BigInteger> collectIdsBySaleDateRange(DateTime saleDateLeft, boolean strictLeft,
+            DateTime saleDateRight, boolean strictRight) {
+        return getEntityHandler().collectKeysByRange("saleDate", saleDateLeft, strictLeft,
+                saleDateRight, strictRight);
     }
 
-    public List<BigInteger> collectIdsByCustomerName(String custName) {
-        return getEntityHandler().collectKeysByEqualsOrContains("customerName", custName);
+    public List<BigInteger> collectIdsByCustomerName(String customerName) {
+        return getEntityHandler().collectKeysByEqualsOrContains("customerName", customerName);
     }
 
-    public List<BigInteger> collectIdsByCustomerNameRegexp(String custNameRegexp) {
-        return getEntityHandler().collectKeysByRegexp("customerName", custNameRegexp);
+    public List<BigInteger> collectIdsByCustomerNameRegexp(String customerNameRegexp) {
+        return getEntityHandler().collectKeysByRegexp("customerName", customerNameRegexp);
     }
 
     public List<BigInteger> collectIdsByPriceRange(BigDecimal priceLeft, boolean strictLeft,
