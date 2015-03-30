@@ -18,18 +18,15 @@ public class RideProviderBean extends AbstractBSProviderBean<Ride> {
     }
 
     public Ride pullRidePoints(Ride ride) {
-        getEntityHandler().pullCollection(ride, "ridePoints");
-        return ride;
+        return pullCollection(ride, "ridePoints");
     }
 
     public Ride pullRideRoads(Ride ride) {
-        getEntityHandler().pullCollection(ride, "rideRoads");
-        return ride;
+        return pullCollection(ride, "rideRoads");
     }
 
     public Ride pullTickets(Ride ride) {
-        getEntityHandler().pullCollection(ride, "tickets");
-        return ride;
+        return pullCollection(ride, "tickets");
     }
 
     public List<Ride> findByBus(Bus bus) {

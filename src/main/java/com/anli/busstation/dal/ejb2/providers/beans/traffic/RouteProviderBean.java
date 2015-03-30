@@ -17,13 +17,11 @@ public class RouteProviderBean extends AbstractBSProviderBean<Route> {
     }
 
     public Route pullRoutePoints(Route route) {
-        getEntityHandler().pullCollection(route, "routePoints");
-        return route;
+        return pullCollection(route, "routePoints");
     }
 
     public Route pullRides(Route route) {
-        getEntityHandler().pullCollection(route, "rides");
-        return route;
+        return pullCollection(route, "rides");
     }
 
     public List<Route> findByNumCode(String numCode) {

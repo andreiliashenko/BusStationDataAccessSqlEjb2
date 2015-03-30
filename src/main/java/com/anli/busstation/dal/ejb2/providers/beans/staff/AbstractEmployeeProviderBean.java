@@ -18,16 +18,16 @@ public abstract class AbstractEmployeeProviderBean<I extends Employee>
         return getEntityHandler().selectEntitiesByRegexp("name", nameRegexp);
     }
 
-    public List<I> findBySalaryRange(BigDecimal salaryLeft, boolean leftStrict,
-            BigDecimal salaryRight, boolean rightStrict) {
-        return getEntityHandler().selectEntitiesByRange("salary", salaryLeft, leftStrict,
-                salaryRight, rightStrict);
+    public List<I> findBySalaryRange(BigDecimal salaryLeft, boolean strictLeft,
+            BigDecimal salaryRight, boolean strictRight) {
+        return getEntityHandler().selectEntitiesByRange("salary", salaryLeft, strictLeft,
+                salaryRight, strictRight);
     }
 
-    public List<I> findByHiringDateRange(DateTime hiringDateLeft, boolean leftStrict,
-            DateTime hiringDateRight, boolean rightStrict) {
-        return getEntityHandler().selectEntitiesByRange("hiringDate", hiringDateLeft, leftStrict,
-                hiringDateRight, rightStrict);
+    public List<I> findByHiringDateRange(DateTime hiringDateLeft, boolean strictLeft,
+            DateTime hiringDateRight, boolean strictRight) {
+        return getEntityHandler().selectEntitiesByRange("hiringDate", hiringDateLeft, strictLeft,
+                hiringDateRight, strictRight);
     }
 
     public List<BigInteger> collectIdsByName(String name) {
@@ -38,15 +38,15 @@ public abstract class AbstractEmployeeProviderBean<I extends Employee>
         return getEntityHandler().collectKeysByRegexp("name", nameRegexp);
     }
 
-    public List<BigInteger> collectIdsBySalaryRange(BigDecimal salaryLeft, boolean leftStrict,
-            BigDecimal salaryRight, boolean rightStrict) {
-        return getEntityHandler().collectKeysByRange("salary", salaryLeft, leftStrict,
-                salaryRight, rightStrict);
+    public List<BigInteger> collectIdsBySalaryRange(BigDecimal salaryLeft, boolean strictLeft,
+            BigDecimal salaryRight, boolean strictRight) {
+        return getEntityHandler().collectKeysByRange("salary", salaryLeft, strictLeft,
+                salaryRight, strictRight);
     }
 
-    public List<BigInteger> collectIdsByHiringDateRange(DateTime hiringDateLeft, boolean leftStrict,
-            DateTime hiringDateRight, boolean rightStrict) {
-        return getEntityHandler().collectKeysByRange("hiringDate", hiringDateLeft, leftStrict,
-                hiringDateRight, rightStrict);
+    public List<BigInteger> collectIdsByHiringDateRange(DateTime hiringDateLeft, boolean strictLeft,
+            DateTime hiringDateRight, boolean strictRight) {
+        return getEntityHandler().collectKeysByRange("hiringDate", hiringDateLeft, strictLeft,
+                hiringDateRight, strictRight);
     }
 }

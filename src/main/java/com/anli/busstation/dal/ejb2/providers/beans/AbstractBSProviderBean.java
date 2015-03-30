@@ -58,6 +58,15 @@ public abstract class AbstractBSProviderBean<I extends BSEntity> implements Sess
         return getEntityHandler().collectAllKeys();
     }
 
+    protected I pullCollection(I entity, String fieldName) {
+        try {
+            getEntityHandler().pullCollection(entity, fieldName);
+            return entity;
+        } catch (NonExistentEntitiesException neeException) {
+            throw new ConsistencyException(neeException.getEntities(), neeException);
+        }
+    }
+
     public void ejbCreate() {
     }
 

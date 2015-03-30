@@ -17,13 +17,11 @@ public class StationProviderBean extends AbstractBSProviderBean<Station> {
     }
 
     public Station pullEmployees(Station station) {
-        getEntityHandler().pullCollection(station, "employees");
-        return station;
+        return pullCollection(station, "employees");
     }
 
     public Station pullBuses(Station station) {
-        getEntityHandler().pullCollection(station, "buses");
-        return station;
+        return pullCollection(station, "buses");
     }
 
     public List<Station> findByName(String name) {
