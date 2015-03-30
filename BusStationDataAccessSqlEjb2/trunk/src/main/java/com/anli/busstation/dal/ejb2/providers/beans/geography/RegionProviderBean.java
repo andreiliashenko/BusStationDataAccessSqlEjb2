@@ -16,8 +16,7 @@ public class RegionProviderBean extends AbstractBSProviderBean<Region> {
     }
 
     public Region pullStations(Region region) throws RemoteException {
-        getEntityHandler().pullCollection(region, "stations");
-        return region;
+        return pullCollection(region, "stations");
     }
 
     public List<Region> findByName(String name) {
