@@ -11,15 +11,15 @@ public class BusRefuellingProviderBean extends AbstractBusServiceProviderBean<Bu
         return "BusRefuelling";
     }
 
-    public List<BusRefuelling> findByVolumeRange(Integer volumeLeft, boolean leftStrict,
-            Integer volumeRight, boolean rightStrict) {
-        return getEntityHandler().selectEntitiesByRange("volume", volumeLeft, leftStrict,
-                volumeRight, rightStrict);
+    public List<BusRefuelling> findByVolumeRange(Integer volumeLeft, boolean strictLeft,
+            Integer volumeRight, boolean strictRight) {
+        return getEntityHandler().selectEntitiesByRange("volume", volumeLeft, strictLeft,
+                volumeRight, strictRight);
     }
 
-    public List<BigInteger> collectIdsByVolumeRange(Integer volumeLeft, boolean leftStrict,
-            Integer volumeRight, boolean rightStrict) {
-        return getEntityHandler().collectKeysByRange("volume", volumeLeft, leftStrict,
-                volumeRight, rightStrict);
+    public List<BigInteger> collectIdsByVolumeRange(Integer volumeLeft, boolean strictLeft,
+            Integer volumeRight, boolean strictRight) {
+        return getEntityHandler().collectKeysByRange("volume", volumeLeft, strictLeft,
+                volumeRight, strictRight);
     }
 }

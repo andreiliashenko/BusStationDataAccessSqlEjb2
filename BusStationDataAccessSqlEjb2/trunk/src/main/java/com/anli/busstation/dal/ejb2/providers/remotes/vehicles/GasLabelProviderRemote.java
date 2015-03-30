@@ -13,13 +13,13 @@ public interface GasLabelProviderRemote extends BSEntityProviderRemote<GasLabel>
 
     List<GasLabel> findByNameRegexp(String nameRegexp) throws RemoteException;
 
-    List<GasLabel> findByPriceRange(BigDecimal priceLeft, boolean leftStrict,
-            BigDecimal priceRight, boolean rightStrict) throws RemoteException;
+    List<GasLabel> findByPriceRange(BigDecimal priceLeft, boolean strictLeft,
+            BigDecimal priceRight, boolean strictRight) throws RemoteException;
 
     List<BigInteger> collectIdsByName(String name) throws RemoteException;
 
     List<BigInteger> collectIdsByNameRegexp(String nameRegexp) throws RemoteException;
 
-    List<BigInteger> collectIdsByPriceRange(BigDecimal priceLeft, boolean leftStrict,
-            BigDecimal priceRight, boolean rightStrict) throws RemoteException;
+    List<BigInteger> collectIdsByPriceRange(BigDecimal priceLeft, boolean strictLeft,
+            BigDecimal priceRight, boolean strictRight) throws RemoteException;
 }

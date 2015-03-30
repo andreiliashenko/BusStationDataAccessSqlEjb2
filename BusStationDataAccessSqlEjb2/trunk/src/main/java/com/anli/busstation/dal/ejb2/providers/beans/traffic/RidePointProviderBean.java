@@ -23,16 +23,16 @@ public class RidePointProviderBean extends AbstractBSProviderBean<RidePoint> {
         return getEntityHandler().selectEntitiesByAny("routePoint", routePoints);
     }
 
-    public List<RidePoint> findByArrivalTimeRange(DateTime arrivalTimeLeft, boolean leftStrict,
-            DateTime arrivalTimeRight, boolean rightStrict) {
-        return getEntityHandler().selectEntitiesByRange("arrivalTime", arrivalTimeLeft, leftStrict,
-                arrivalTimeRight, rightStrict);
+    public List<RidePoint> findByArrivalTimeRange(DateTime arrivalTimeLeft, boolean strictLeft,
+            DateTime arrivalTimeRight, boolean strictRight) {
+        return getEntityHandler().selectEntitiesByRange("arrivalTime", arrivalTimeLeft, strictLeft,
+                arrivalTimeRight, strictRight);
     }
 
-    public List<RidePoint> findByDepartureTimeRange(DateTime departureTimeLeft, boolean leftStrict,
-            DateTime departureTimeRight, boolean rightStrict) {
-        return getEntityHandler().selectEntitiesByRange("departureTime", departureTimeLeft, leftStrict,
-                departureTimeRight, rightStrict);
+    public List<RidePoint> findByDepartureTimeRange(DateTime departureTimeLeft, boolean strictLeft,
+            DateTime departureTimeRight, boolean strictRight) {
+        return getEntityHandler().selectEntitiesByRange("departureTime", departureTimeLeft, strictLeft,
+                departureTimeRight, strictRight);
     }
 
     public List<BigInteger> collectIdsByRoutePoint(RoutePoint routePoint) {
@@ -43,15 +43,15 @@ public class RidePointProviderBean extends AbstractBSProviderBean<RidePoint> {
         return getEntityHandler().collectKeysByAny("routePoint", routePoints);
     }
 
-    public List<BigInteger> collectIdsByArrivalTimeRange(DateTime arrivalTimeLeft, boolean leftStrict,
-            DateTime arrivalTimeRight, boolean rightStrict) {
-        return getEntityHandler().collectKeysByRange("arrivalTime", arrivalTimeLeft, leftStrict,
-                arrivalTimeRight, rightStrict);
+    public List<BigInteger> collectIdsByArrivalTimeRange(DateTime arrivalTimeLeft, boolean strictLeft,
+            DateTime arrivalTimeRight, boolean strictRight) {
+        return getEntityHandler().collectKeysByRange("arrivalTime", arrivalTimeLeft, strictLeft,
+                arrivalTimeRight, strictRight);
     }
 
-    public List<BigInteger> collectIdsByDepartureTimeRange(DateTime departureTimeLeft, boolean leftStrict,
-            DateTime departureTimeRight, boolean rightStrict) {
-        return getEntityHandler().collectKeysByRange("departureTime", departureTimeLeft, leftStrict,
-                departureTimeRight, rightStrict);
+    public List<BigInteger> collectIdsByDepartureTimeRange(DateTime departureTimeLeft, boolean strictLeft,
+            DateTime departureTimeRight, boolean strictRight) {
+        return getEntityHandler().collectKeysByRange("departureTime", departureTimeLeft, strictLeft,
+                departureTimeRight, strictRight);
     }
 }
