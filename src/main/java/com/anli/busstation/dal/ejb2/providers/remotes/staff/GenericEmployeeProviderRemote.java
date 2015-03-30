@@ -14,8 +14,8 @@ public interface GenericEmployeeProviderRemote<I extends Employee> extends BSEnt
 
     List<I> findByNameRegexp(String nameRegexp) throws RemoteException;
 
-    List<I> findBySalaryRange(BigDecimal salaryLeft, boolean leftStrict,
-            BigDecimal salaryRight, boolean rightStrict) throws RemoteException;
+    List<I> findBySalaryRange(BigDecimal salaryLeft, boolean strictLeft,
+            BigDecimal salaryRight, boolean strictRight) throws RemoteException;
 
     List<I> findByHiringDateRange(DateTime hiringDateLeft, boolean strictLeft,
             DateTime hiringDateRight, boolean strictRight) throws RemoteException;
@@ -24,8 +24,8 @@ public interface GenericEmployeeProviderRemote<I extends Employee> extends BSEnt
 
     List<BigInteger> collectIdsByNameRegexp(String nameRegexp) throws RemoteException;
 
-    List<BigInteger> collectIdsBySalaryRange(BigDecimal salaryLeft, boolean leftStrict,
-            BigDecimal salaryRight, boolean rightStrict) throws RemoteException;
+    List<BigInteger> collectIdsBySalaryRange(BigDecimal salaryLeft, boolean strictLeft,
+            BigDecimal salaryRight, boolean strictRight) throws RemoteException;
 
     List<BigInteger> collectIdsByHiringDateRange(DateTime hiringDateLeft, boolean strictLeft,
             DateTime hiringDateRight, boolean strictRight) throws RemoteException;

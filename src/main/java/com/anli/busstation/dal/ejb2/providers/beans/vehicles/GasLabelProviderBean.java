@@ -21,10 +21,10 @@ public class GasLabelProviderBean extends AbstractBSProviderBean<GasLabel> {
         return getEntityHandler().selectEntitiesByRegexp("name", nameRegexp);
     }
 
-    public List<GasLabel> findByPriceRange(BigDecimal priceLeft, boolean leftStrict,
-            BigDecimal priceRight, boolean rightStrict) {
-        return getEntityHandler().selectEntitiesByRange("price", priceLeft, leftStrict,
-                priceRight, rightStrict);
+    public List<GasLabel> findByPriceRange(BigDecimal priceLeft, boolean strictLeft,
+            BigDecimal priceRight, boolean strictRight) {
+        return getEntityHandler().selectEntitiesByRange("price", priceLeft, strictLeft,
+                priceRight, strictRight);
     }
 
     public List<BigInteger> collectIdsByName(String name) {
@@ -35,9 +35,9 @@ public class GasLabelProviderBean extends AbstractBSProviderBean<GasLabel> {
         return getEntityHandler().collectKeysByRegexp("name", nameRegexp);
     }
 
-    public List<BigInteger> collectIdsByPriceRange(BigDecimal priceLeft, boolean leftStrict,
-            BigDecimal priceRight, boolean rightStrict) {
-        return getEntityHandler().collectKeysByRange("price", priceLeft, leftStrict,
-                priceRight, rightStrict);
+    public List<BigInteger> collectIdsByPriceRange(BigDecimal priceLeft, boolean strictLeft,
+            BigDecimal priceRight, boolean strictRight) {
+        return getEntityHandler().collectKeysByRange("price", priceLeft, strictLeft,
+                priceRight, strictRight);
     }
 }
